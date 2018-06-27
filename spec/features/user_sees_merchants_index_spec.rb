@@ -8,4 +8,13 @@ describe "User visits index page" do
       expect(page).to have_content(merchant_1.name)
       expect(page).to have_content(merchant_2.name)
     end
+
+    it 'should go to edit page when merchant edit button is clicked' do
+      merchant = Merchant.create(name: "7-eleven")
+
+      visit '/merchants'
+      click_on 'Edit'
+
+      expect(current_path).to eq("/merchants/#{merchant.id}/edit")
+    end
 end
