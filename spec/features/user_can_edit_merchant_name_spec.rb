@@ -7,9 +7,8 @@ describe 'User sees an edit merchant page' do
     fill_in 'merchant[name]', with: "#{new_name}"
     click_on 'Edit Merchant'
 
-    expect(current_path).to eq('/merchants')
-    expect(page).to have_content(merchant.name)
-    expect(page).to_not have_content('7-11')
+    expect(current_path).to eq("/merchants/#{merchant.id}")
+    expect(page).to have_content(new_name)
+    expect(page).to_not have_content(merchant.name)
   end
-  
 end
