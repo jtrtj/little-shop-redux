@@ -1,6 +1,11 @@
-<form class="edit-merchant" action="/merchants/<%= @merchant.id %>" method="post">
+<form class="edit-merchant" action="/merchants/<%= @merchant.id %>" method="POST">
   <p>Edit <%= @merchant.name %>:</p>
   <input type="hidden" name="_method" value="PUT">
   <input type="text" name="merchant[name]" value="<%= @merchant.name %>">
   <input type="submit" value="Edit Merchant">
+</form>
+
+<form action="/merchants/<%= @merchant.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
 </form>
