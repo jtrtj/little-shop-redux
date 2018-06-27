@@ -9,5 +9,4 @@ describe "User sees a new merchant page" do
     expect(current_path).to eq("/merchants")
     expect(page).to have_content(merchant.name)
   end
-  
 end
