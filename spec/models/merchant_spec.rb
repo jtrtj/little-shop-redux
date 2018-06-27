@@ -5,7 +5,6 @@ RSpec.describe Merchant do
 
       expect(merchant).to_not be_valid
     end
-    
   end
   
 end
