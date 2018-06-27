@@ -1,5 +1,5 @@
 <form class="edit-merchant", action="/merchants" method="post">
-  <p>Edit:</p>
+  <p>Edit <%= @merchant.name %>:</p>
   <input type="text" name="merchant[name]" value="PUT">
   <input type="submit" value="Edit Merchant">
 </form>
