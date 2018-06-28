@@ -4,4 +4,8 @@ class InvoiceItem < ActiveRecord::Base
                         :invoice_id,
                         :quantity,
                         :price
+
+  def calculate_total_price
+  
+  end
 end
