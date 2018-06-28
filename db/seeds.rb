@@ -1,4 +1,4 @@
-require './data/*.csv'
+require './app/models/merchant.rb'
 require 'CSV'
 
 CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |m|
