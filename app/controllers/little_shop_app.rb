@@ -67,4 +67,29 @@ class LittleShopApp < Sinatra::Base
     Item.destroy(params[:id])
     redirect '/items'
   end
+
+  get '/invoice' do
+    @invoice = Invoice.all
+    erb :'invoice/index'
+  end
+
+  get '/invoice/:id' do
+    @invoice = Invoice.find(params[:id])
+    erb :'invoice/show'
+  end
+
+  get '/invoice/:id/edit' do
+    @invoice = Invoice.find(params[:id])
+    erb :'invoice/edit'
+  end
+
+  put '/invoice/:id' do
+    Invoice.update(params[:id], params[:invoice])
+    redirect "/invoice/#{params[:id]}"
+  end
+
+  delete '/invoice/:id' do
+    Invoice.destroy(params[:id])
+    redirect '/invoice'
+  end
 end
