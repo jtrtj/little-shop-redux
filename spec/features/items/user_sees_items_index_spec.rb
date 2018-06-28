@@ -4,12 +4,14 @@ describe 'User visits index page' do
                         title: 'VapeTron',
                         description: 'World\'s #1 Vape Pen',
                         price: 500,
+                        merchant_id: 1234567,
                         image: '/data/image_file_name'
                       )
     item_2 = Item.create(
                         title: 'VapeJuice',
                         description: 'Grape flavor',
                         price: 100,
+                        merchant_id: 1234567,
                         image:'/data/image_file_name_'
                       )
 
@@ -29,6 +31,7 @@ describe 'User edits item' do
                       title: 'VapeTron',
                       description: 'World\'s #1 Vape Pen',
                       price: 500,
+                      merchant_id: 1234567,
                       image: '/data/image_file_name'
                     )
 
@@ -43,6 +46,7 @@ describe 'User edits item' do
                         title: 'VapeTron',
                         description: 'World\'s #1 Vape Pen',
                         price: 500,
+                        merchant_id: 1234567,
                         image: '/data/image_file_name'
                       )
 

@@ -4,6 +4,7 @@ describe 'User edits item' do
                         title: 'VapeTron',
                         description: 'World\'s #1 Vape Pen',
                         price: 500,
+                        merchant_id: 123456,
                         image: '/data/image_file_name'
                       )
 
@@ -18,6 +19,7 @@ describe 'User edits item' do
                         title: 'VapeTron',
                         description: 'World\'s #1 Vape Pen',
                         price: 500,
+                        merchant_id: 123456,
                         image: '/data/image_file_name'
                       )
 
