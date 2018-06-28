@@ -14,9 +14,8 @@ describe 'User edits invoice' do
   it 'should go to edit page when invoice edit button is clicked' do
     invoice_1 = Invoice.create(merchant_id: 12, status: 'pending')
     invoice_2 = Invoice.create(merchant_id: 23, status: 'shipped')
-    
+
     visit '/invoices'
-    save_and_open_page
 
     within("#invoice_1") do
       click_button "Edit"
@@ -24,7 +23,7 @@ describe 'User edits invoice' do
       expect(current_path).to eq("/invoices/#{invoice_1.id}/edit")
     end
   end
-  
+
   it 'user can delete an invoice' do
     invoice_1 = Invoice.create(merchant_id: 12, status: 'pending')
     invoice_2 = Invoice.create(merchant_id: 23, status: 'shipped')
