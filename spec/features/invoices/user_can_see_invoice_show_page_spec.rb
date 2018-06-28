@@ -26,4 +26,7 @@ describe 'User visits show page' do
     expect(current_path).to eq('/invoices')
     expect(page).to_not have_content(invoice_1.id)
   end
+
+describe 'User visits show page' do
+  it 'can see'
 end
