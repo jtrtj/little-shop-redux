@@ -35,7 +35,7 @@ describe 'User edits item' do
     visit '/items'
     click_button 'Edit'
 
-    expect(current_path).to eq('/items/#{item.id}/edit')
+    expect(current_path).to eq("/items/#{item.id}/edit")
   end
 
   it 'user can delete a item' do
