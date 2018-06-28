@@ -1,0 +1,13 @@
+<% @invoices.each do |invoice| %>
+  <ul>
+    <li><a href="/invoices/<%=invoice.id%>"><%=invoice.name%></a></li>
+    <form action="/invoices/<%=invoice.id%>/edit" method="GET">
+      <input type="hidden" name="_method" value="EDIT">
+      <input type="submit" value="Edit">
+    </form>
+    <form action="/invoices/<%= invoice.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+  </ul>
+<% end %>
