@@ -28,5 +28,29 @@ describe 'User visits show page' do
   end
 
 describe 'User visits show page' do
-  it 'can see'
+  it 'can see all items on a single invoice' do
+    invoice = Invoice.create(merchant_id: 12, status: 'pending')
+
+    invoice_item_1 = invoice.invoice_items.create(item_id: 1, quantity: 789, price: 1)
+    invoice_item_2 = invoice.invoice_items.create(item_id: 2, quantity: 987, price: 11)
+    invoice_item_3 = invoice.invoice_items.create(item_id: 3, quantity: 321, price: 111)
+
+    visit "/invoices/#{invoice.id}"
+
+    expect(page).to have_content("Item ID: #{invoice_item_1.item_id}")
+    expect(page).to have_content("Quantity: #{invoice_item_1.quantity}")
+    expect(page).to have_content("Price: #{invoice_item_1.price}")
+    expect(page).to have_content("Item Title: #{invoice_item_1.items.title}")
+
+    expect(page).to have_content("Item ID: #{invoice_item_2.item_id}")
+    expect(page).to have_content("Quantity: #{invoice_item_2.quantity}")
+    expect(page).to have_content("Price: #{invoice_item_2.price}")
+    expect(page).to have_content("Item Title: #{invoice_item_2.items.title}")
+
+    expect(page).to have_content("Item ID: #{invoice_item_3.item_id}")
+    expect(page).to have_content("Quantity: #{invoice_item_3.quantity}")
+    expect(page).to have_content("Price: #{invoice_item_3.price}")
+    expect(page).to have_content("Item Title: #{invoice_item_3.items.title}")
+    end
+  end
 end
