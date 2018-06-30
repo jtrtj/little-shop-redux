@@ -4,4 +4,6 @@ class Item < ActiveRecord::Base
                         :price,
                         :merchant_id,
                         :image
+
+  belongs_to :merchant
 end

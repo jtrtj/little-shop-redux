@@ -69,7 +69,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/invoices' do
-    @invoices = Invoice.all
+    @invoices = Invoice.all.includes(:invoice_items)
     erb :'invoices/index'
   end
 
