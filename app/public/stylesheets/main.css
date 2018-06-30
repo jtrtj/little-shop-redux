@@ -56,7 +56,6 @@ table {
   border-collapse: collapse;
   width: 60%;
   table-layout: fixed
-    /* align-content: center */
 }
 
 td {
@@ -71,5 +70,25 @@ table, td {
 }
 
 .row-name {
-  width: 80%
+  width: 75%
+}
+
+.row-edit input[type=submit] {
+  background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 16px 28px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.row-delete input[type=submit] {
+  background-color: red;
+    border: none;
+    color: white;
+    padding: 16px 21px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }

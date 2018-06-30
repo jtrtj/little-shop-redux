@@ -27,11 +27,11 @@
 <% @merchants.each do |merchant| %>
   <table>
     <tr><td class="row-name"><a href="/merchants/<%=merchant.id%>"><%=merchant.name%></a></td>
-      <td><form action="/merchants/<%=merchant.id%>/edit" method="GET">
+      <td class="row-edit"><form action="/merchants/<%=merchant.id%>/edit" method="GET">
         <input type="hidden" name="_method" value="EDIT">
         <input type="submit" value="Edit">
       </form></td>
-      <td><form action="/merchants/<%= merchant.id %>" method="POST">
+      <td class="row-delete"><form action="/merchants/<%= merchant.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete">
       </form></td>
