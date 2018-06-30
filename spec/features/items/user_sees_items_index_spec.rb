@@ -42,9 +42,15 @@ RSpec.describe 'User' do
                         )
 
       visit '/items'
-      # save_and_open_page
-        click_link "#{item_1.title}"
+      click_link "#{item_1.title}"
+
       expect(current_path).to eq("/items/#{item_1.id}")
+    end
+
+    it 'can click create and go to a new item page' do
+      visit '/items'
+      click_button "Create"
+      expect(current_path).to eq("/items/new")
     end
   end
 end

@@ -1,6 +1,10 @@
+<form action="/items/new" method="GET">
+  <input type="submit" value="Create">
+</form>
+
 <% @items.each do |item| %>
-  <ul>
-    <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
-    <li><%=item.price%></li>
-  </ul>
+<ul>
+  <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
+  <li><%=item.price%></li>
+</ul>
 <% end %>
