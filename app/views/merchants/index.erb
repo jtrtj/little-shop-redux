@@ -12,16 +12,15 @@
 
 <nav id="navbar">
   <ul>
-	<li><a href="http://github.com">Link 1</a></li>
-	<li><a href="http://github.com">Link 2</a></li>
-	<li><a href="http://github.com">Link 3</a></li>
-	<li><a href="http://github.com">Link 4</a></li>
-	<li><a href="http://github.com">Link 5</a></li>
+	<li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+	<li><a href="http://github.com">Merchants</a></li>
+	<li><a href="http://github.com">Items</a></li>
+	<li><a href="http://github.com">Invoices</a></li>
   </ul>
 </nav>
 
 <h1 class="title">Merchants</h1>
-<a href="/merchants/new"><button class="create-button">Create A New Merchant</button></a>
+<div class="create-button"><a href="/merchants/new"><button>Create A New Merchant</button></a></div>
 
 <% @merchants.each do |merchant| %>
   <ul>
@@ -38,5 +37,3 @@
 <% end %>
 </body>
 </html>
-
-
