@@ -28,7 +28,7 @@ describe 'User visits show page' do
   end
 
 describe 'User visits show page' do
-  it 'can see all items on a single invoice' do
+  xit 'can see all items on a single invoice' do
     invoice = Invoice.create(merchant_id: 12, status: 'pending')
 
     invoice_item_1 = invoice.invoice_items.create(item_id: 1, quantity: 789, price: 1)
@@ -36,7 +36,7 @@ describe 'User visits show page' do
     invoice_item_3 = invoice.invoice_items.create(item_id: 3, quantity: 321, price: 111)
 
     item = Item.create(title: 'vapebot', description: 'descriptionssssssss', price: 50, image: 'file_path', merchant_id: 2)
-require 'pry'; binding.pry
+
     visit "/invoices/#{invoice.id}"
     save_and_open_page
 

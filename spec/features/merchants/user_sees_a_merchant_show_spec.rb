@@ -42,6 +42,5 @@ RSpec.describe 'user' do
       expect(current_path).to eq('/merchants')
       expect(page).to_not have_content(merchant.name)
     end
-
   end
 end
