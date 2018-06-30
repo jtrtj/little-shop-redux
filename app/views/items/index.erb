@@ -1,15 +1,10 @@
+<form action="/items/new" method="GET">
+  <input type="submit" value="Create">
+</form>
+
 <% @items.each do |item| %>
-  <ul>
-    <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
-    <li><%=item.price%></li>
-    <form action="/items/<%=item.id%>/edit" method="GET">
-      <input type="hidden" name="_method" value="EDIT">
-      <input type="submit" value="Edit">
-    </form>
-    
-    <form action="/items/<%= item.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete">
-    </form>
-  </ul>
+<ul>
+  <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
+  <li><%=item.price%></li>
+</ul>
 <% end %>
