@@ -47,7 +47,14 @@ h1 {
   display: inline-block;
   font-size: 16px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.banner p {
+  text-align: left;
+  margin-left: 50px;
+  font-size: 16pt;
 }
 
 table {
