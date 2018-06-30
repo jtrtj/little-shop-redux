@@ -35,7 +35,10 @@ describe 'User visits show page' do
     invoice_item_2 = invoice.invoice_items.create(item_id: 2, quantity: 987, price: 11)
     invoice_item_3 = invoice.invoice_items.create(item_id: 3, quantity: 321, price: 111)
 
+    item = Item.create(title: 'vapebot', description: 'descriptionssssssss', price: 50, image: 'file_path', merchant_id: 2)
+require 'pry'; binding.pry
     visit "/invoices/#{invoice.id}"
+    save_and_open_page
 
     expect(page).to have_content("Item ID: #{invoice_item_1.item_id}")
     expect(page).to have_content("Quantity: #{invoice_item_1.quantity}")

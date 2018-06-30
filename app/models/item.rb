@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  belongs_to :invoice_items
+  has_many :invoice_items
 
   validates_presence_of :title,
                         :description,

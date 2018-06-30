@@ -10,4 +10,9 @@ class InvoiceItem < ActiveRecord::Base
   def calculate_total_price
   
   end
+
+  def self.with_items
+     joins(:items)
+  end
+
 end
