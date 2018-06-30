@@ -1,4 +1,11 @@
 <h1><%= @merchant.name %></h1>
+<% @merchant.items.each do |item| %>
+  <ul>
+    <li><img src='<%= item.image %>'>
+    <li><a href="/items/<%=item.title%>"><%=item.title%></a></li>
+    <li>><%=item.price%></a></li>
+  <ul>
+<% end %>
 
 <form action="/merchants/<%=@merchant.id%>/edit" method="GET">
   <input type="hidden" name="_method" value="EDIT">
