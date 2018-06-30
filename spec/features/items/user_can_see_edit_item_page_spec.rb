@@ -1,6 +1,6 @@
 RSpec.describe 'User' do
-  context 'visiting /items/id' do
-    it 'should see item attributes' do
+  context 'visiting /items/id/edit' do
+    xit 'should see item edit form' do
       merchant = Merchant.create(name: 'holla atcha vape')
       item = merchant.items.create(
                                   title: 'VapeTron',
@@ -9,7 +9,7 @@ RSpec.describe 'User' do
                                   image: '/data/image_file_name',
                                   )
 
-      visit "/items/#{item.id}"
+      visit "/items/#{item.id}/edit"
 
       expect(page).to have_content(item.title)
       expect(page).to have_content(item.description)
@@ -18,7 +18,7 @@ RSpec.describe 'User' do
       expect(page).to have_content(item.price)
     end
 
-    it 'can delete an item' do
+    xit 'can click cancel button to return to item index' do
       merchant = Merchant.create(name: 'holla atcha vape')
       item = merchant.items.create(
                                   title: 'VapeTron',
@@ -27,26 +27,27 @@ RSpec.describe 'User' do
                                   image: '/data/image_file_name',
                                   )
 
-      visit "/items/#{item.id}"
-      click_button 'Delete'
+      visit "/items/#{item.id}/edit"
+      click_button "Cancel"
 
       expect(current_path).to eq('/items')
-      expect(page).to_not have_content(item.title)
     end
 
-  it 'can edit an item' do
-    merchant = Merchant.create(name: 'holla atcha vape')
-    item = merchant.items.create(
-                                title: 'VapeTron',
-                                description: 'World\'s #1 Vape Pen',
-                                price: 500,
-                                image: '/data/image_file_name',
-                                )
+    xit 'can click update item button to update in item' do
+      merchant = Merchant.create(name: 'holla atcha vape')
+      item = merchant.items.create(
+                                  title: 'VapeTron',
+                                  description: 'World\'s #1 Vape Pen',
+                                  price: 500,
+                                  image: '/data/image_file_name',
+                                  )
+      new_title = 'VapeLord'
+      visit "/items/#{item.id}/edit"
+      fill_in 'item[title]', with: "#{new_title}"
+      click_button 'Update Item'
 
-      visit "/items/#{item.id}"
-      click_button 'Edit'
-
-      expect(current_path).to eq("/items/#{item.id}/edit")
+      expect(current_path).to eq('/items')
+      expect(page).to have_content('#{new_title}')
     end
   end
 end
