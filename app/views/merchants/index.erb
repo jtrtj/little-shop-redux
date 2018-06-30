@@ -13,27 +13,30 @@
 <nav id="navbar">
   <ul>
 	<li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
-	<li><a href="http://github.com">Merchants</a></li>
-	<li><a href="http://github.com">Items</a></li>
-	<li><a href="http://github.com">Invoices</a></li>
+	<li><a href="/merchants">Merchants</a></li>
+	<li><a href="/items">Items</a></li>
+	<li><a href="/invoices">Invoices</a></li>
   </ul>
 </nav>
 
+<div class="banner">
 <h1 class="title">Merchants</h1>
-<div class="create-button"><a href="/merchants/new"><button>Create A New Merchant</button></a></div>
+<a href="/merchants/new"><button>Create A New Merchant</button></a>
+</div>
 
 <% @merchants.each do |merchant| %>
-  <ul>
-    <li><a href="/merchants/<%=merchant.id%>"><%=merchant.name%></a></li>
-    <form action="/merchants/<%=merchant.id%>/edit" method="GET">
-      <input type="hidden" name="_method" value="EDIT">
-      <input type="submit" value="Edit">
-    </form>
-    <form action="/merchants/<%= merchant.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete">
-    </form>
-  </ul>
+  <table>
+    <tr><td><a href="/merchants/<%=merchant.id%>"><%=merchant.name%></a></td>
+      <td><form action="/merchants/<%=merchant.id%>/edit" method="GET">
+        <input type="hidden" name="_method" value="EDIT">
+        <input type="submit" value="Edit">
+      </form>
+      <form action="/merchants/<%= merchant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+      </form>
+    </tr>
+  </table>
 <% end %>
 </body>
 </html>
