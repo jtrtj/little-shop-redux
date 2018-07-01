@@ -207,8 +207,3 @@ RSpec.describe Invoice do
     end
   end
 end
-
-=begin
-Invoice with the highest associated quantity
-Invoice with the lowest associated quantity
-=end
