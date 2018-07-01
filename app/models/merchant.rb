@@ -15,6 +15,10 @@ class Merchant < ActiveRecord::Base
     items.sum(:price)
   end
 
+  def max_priced_item
+    items.maximum(:price)
+  end
+
   def self.most_items
     all.max_by do |merchant|
       merchant.total_merchant_items
@@ -22,6 +26,8 @@ class Merchant < ActiveRecord::Base
   end
 
   def self.highest_priced_item
-
+    all.max_by do |merchant|
+      merchant.max_priced_item
+    end
   end
 end
