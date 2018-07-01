@@ -76,7 +76,7 @@ RSpec.describe Invoice do
                           image: '/data/image_file_name',
                           merchant_id: 6789
                          )
-                         
+
       invoice_item_1 = InvoiceItem.create(
                                           item_id: item_1.id,
                                           invoice_id: invoice_1.id,
