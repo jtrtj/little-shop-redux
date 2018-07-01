@@ -41,7 +41,8 @@ RSpec.describe 'User' do
 
     it 'can click create and go to a new item page' do
       visit '/items'
-      click_button "Create"
+
+      click_button "Create A New Item"
       expect(current_path).to eq("/items/new")
     end
   end

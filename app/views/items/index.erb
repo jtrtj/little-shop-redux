@@ -1,21 +1,46 @@
-<h1>Items</h1>
-<a href="/items/new"><button class="create-button">Create A New Item</button></a>
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LittleShop</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
+      <script src="main.js"></script>
+    </head>
+    <body>
+      <nav id="navbar">
+        <ul>
+          <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
 
-<% @items.each do |item| %>
-  <ul>
-    <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
-    <li><%=item.price%></li>
-    <form action="/items/<%=item.id%>/edit" method="GET">
-      <input type="hidden" name="_method" value="EDIT">
-      <input type="submit" value="Edit">
-    </form>
-    
-    <form action="/items/<%= item.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete">
-    </form>
-  </ul>
-<% end %>
+      <h1>Items</h1>
+        <form method="get" action="items/new">
+          <button type="submit">Create A New Item</button>
+        </form>
+
+      <% @items.each do |item| %>
+        <ul>
+          <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
+          <li><%=item.price%></li>
+          <form action="/items/<%=item.id%>/edit" method="GET">
+            <input type="hidden" name="_method" value="EDIT">
+            <input type="submit" value="Edit">
+          </form>
+          
+          <form action="/items/<%= item.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete">
+          </form>
+        </ul>
+      <% end %>
+      </section>
+    </body>
+  </html>
 
 
 

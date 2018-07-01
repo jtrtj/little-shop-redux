@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>LittleShop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
-  <script src="main.js"></script>
-</head>
-<body>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LittleShop</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
+      <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/new.css" />
+      <script src="main.js"></script>
+    </head>
+  <body>
 
-<nav id="navbar">
-  <ul>
-	<li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
-	<li><a href="/merchants">Merchants</a></li>
-	<li><a href="/items">Items</a></li>
-	<li><a href="/invoices">Invoices</a></li>
-  </ul>
-</nav>
+    <nav id="navbar">
+      <ul>
+      <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+      <li><a href="/merchants">Merchants</a></li>
+      <li><a href="/items">Items</a></li>
+      <li><a href="/invoices">Invoices</a></li>
+      </ul>
+    </nav>
 
-<div class="banner">
-  <h1>Create New Merchant</h1>
-</div>
+    <div class="banner">
+      <h1>Create New Merchant</h1>
+    </div>
 
-<div class="input-form">
-<form class="new-merchant", action="/merchants" method="post">
-<label>Name</label><br>
-  <input type="text" name="merchant[name]" placeholder="Merchant Name"><br>
-</body>
-</html>
+      <div class="input-form">
+        <form class="new-merchant" action="/merchants" method="POST">
+          <label>Name</label><br>
+          <input type="text" name="merchant[name]" placeholder="Enter Merchant Name"><br>
+          <input style="background-color:cornflowerblue" type="submit" value="Create Merchant">
+        </form>
+
+      <div class="input-form">
+      <form action="/merchants">
+        <input type="submit" value="Cancel">
+      </form>
+      </div>
+    </body>
+  </html>
+
+
