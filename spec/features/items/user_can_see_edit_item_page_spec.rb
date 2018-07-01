@@ -28,7 +28,7 @@ RSpec.describe 'User' do
                                   )
 
       visit "/items/#{item.id}/edit"
-      save_and_open_page
+
       click_button "Cancel"
 
       expect(current_path).to eq('/items')

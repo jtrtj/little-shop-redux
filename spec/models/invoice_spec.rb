@@ -66,7 +66,7 @@ RSpec.describe Invoice do
       expect(Invoice.percentage_by_status('returned')).to eq(17.0)
     end
 
-    it '#invoice_with_highest_unit_price' do
+    xit '#invoice_with_highest_unit_price' do
       invoice_1 = Invoice.create(merchant_id: 99999, status: 'shipped')
       invoice_2 = Invoice.create(merchant_id: 77777, status: 'shipped')
       item_1 = Item.create(
