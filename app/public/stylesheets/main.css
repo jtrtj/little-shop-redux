@@ -94,11 +94,26 @@ table, td {
 
 .row-delete input[type=submit] {
   background-color: red;
-    border-radius: 12px;
-    border: none;
-    color: white;
-    padding: 16px 21px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 16px 21px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.create-form {
+
+}
+
+.create-form {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.create-form input[type=text] {
+  
 }
