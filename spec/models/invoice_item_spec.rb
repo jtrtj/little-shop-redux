@@ -42,7 +42,7 @@ RSpec.describe InvoiceItem do
                                           quantity: 5,
                                           unit_price: 500,
                                         )
-      expect(InvoiceItem.find_invoice_item_with_highest_unit_price_invoice_id).to eq(invoice_item_2.invoice_id)
+      expect(InvoiceItem.find_invoice_item_with_lowest_unit_price_invoice_id).to eq(invoice_item_2.invoice_id)
     end
   end
 end
