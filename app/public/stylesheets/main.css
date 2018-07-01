@@ -39,6 +39,7 @@ h1 {
 
 .banner button {
   background-color: #4CAF50;
+  border-radius: 12px;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -83,6 +84,7 @@ table, td {
 .row-edit input[type=submit] {
   background-color: cornflowerblue;
     border: none;
+    border-radius: 12px;
     color: white;
     padding: 16px 28px;
     text-decoration: none;
@@ -92,6 +94,7 @@ table, td {
 
 .row-delete input[type=submit] {
   background-color: red;
+    border-radius: 12px;
     border: none;
     color: white;
     padding: 16px 21px;
