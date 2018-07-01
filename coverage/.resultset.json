@@ -29,7 +29,7 @@
       "/Users/eliotswank/turing/mod2-redux/projects/little-shop-redux/app/controllers/little_shop_app.rb": [
         1,
         1,
-        null,
+        1,
         null,
         null,
         1,
@@ -525,6 +525,17 @@
         null,
         null
       ],
+      "/Users/eliotswank/turing/mod2-redux/projects/little-shop-redux/spec/features/merchants/user_sees_a_merchant_dashboard_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/eliotswank/turing/mod2-redux/projects/little-shop-redux/spec/features/merchants/user_sees_a_merchant_show_spec.rb": [
         1,
         1,
@@ -977,6 +988,6 @@
         null
       ]
     },
-    "timestamp": 1530478331
+    "timestamp": 1530482705
   }
 }
