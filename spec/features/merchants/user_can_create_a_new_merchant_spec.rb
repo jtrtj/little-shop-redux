@@ -6,7 +6,7 @@ RSpec.describe 'User' do
       visit '/merchants/new'
       fill_in 'merchant[name]', with: "#{merchant.name}"
       click_on 'Create Merchant'
-
+      
       expect(current_path).to eq('/merchants')
       expect(page).to have_content(merchant.name)
     end

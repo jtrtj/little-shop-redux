@@ -9,15 +9,15 @@ RSpec.describe 'user' do
       expect(page).to have_content(merchant_1.name)
       expect(page).to have_content(merchant_2.name)
     end
-    
+
     it 'can create a merchant' do
       visit '/merchants'
-      
-      click_button "Create"
-      
+
+      click_button "Create A New Merchant"
+
       expect(current_path).to eq("/merchants/new")
     end
-  
+
     it 'can click edit button to edit merchant' do
       merchant = Merchant.create(name: "7-eleven")
 
@@ -26,7 +26,7 @@ RSpec.describe 'user' do
 
       expect(current_path).to eq("/merchants/#{merchant.id}/edit")
     end
-    
+
     it 'can click delete button to delete merchant' do
       merchant = Merchant.create(name: 'Darth Vapor')
 
