@@ -5,7 +5,7 @@ RSpec.describe InvoiceItem do
                             item_id: nil,
                             invoice_id: nil,
                             quantity: nil,
-                            price: nil
+                            unit_price: nil
                             )
 
       expect(invoice_item).to_not be_valid
