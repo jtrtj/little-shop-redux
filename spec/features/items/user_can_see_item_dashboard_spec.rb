@@ -15,9 +15,9 @@ RSpec.describe 'User' do
                         image: 'image url',
                         merchant_id: 3456
                       )
-      visit '/items/dashboard'
+      visit 'items/dashboard'
 
-      expect(page).to have_content('Item Dashboard')
+      expect(page).to have_content('Items Dashboard')
     end
 
     xit 'should see item total count' do
