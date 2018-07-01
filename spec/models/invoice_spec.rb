@@ -97,7 +97,6 @@ RSpec.describe Invoice do
                                           quantity: 5,
                                           unit_price: item_2.price,
                                          )
-        require 'pry'; binding.pry
       expect(Invoice.invoice_with_highest_unit_price).to eq(invoice_2)
     end
   end
