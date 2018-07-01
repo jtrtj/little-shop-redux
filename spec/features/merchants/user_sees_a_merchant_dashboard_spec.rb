@@ -31,10 +31,10 @@ RSpec.describe "User" do
                           merchant_id: merchant_1.id
                           )
 
-      visit 'merchants/dashboard'
-
+      visit '/merchants/dashboard'
+save_and_open_page
       
-      expect(page).to have_content("Merchant With Most Items: #{merchant.most_items.name}")
+      expect(page).to have_content("Merchant With Most Items: #{Merchant.most_items.name}")
     end
   end
 end
