@@ -23,6 +23,7 @@
       <form action="/merchants/<%= @merchant.id %>" method="POST">
         <h1>Edit <%= @merchant.name %></h1>
         <input type="hidden" name="_method" value="PUT">
+        <label>Name</label><br>
         <input type="text" name="merchant[name]" placeholder="<%= @merchant.name %>"><br>
         <input type="submit" value="Edit Merchant"><br>
       </form>
