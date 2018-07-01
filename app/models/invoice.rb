@@ -10,4 +10,8 @@ class Invoice < ActiveRecord::Base
       invoice_item.quantity * invoice_item.unit_price
     end.inject(:+)
   end
+
+  def self.amount_by_status(status)
+    where(status: status).length
+  end
 end
