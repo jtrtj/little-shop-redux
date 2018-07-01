@@ -12,6 +12,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def total_price_all_items
+    items.sum(:price)
   end
 
   def self.most_items
