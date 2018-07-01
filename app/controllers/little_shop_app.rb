@@ -1,4 +1,7 @@
 class LittleShopApp < Sinatra::Base
+  get '/merchants-dashboard' do
+  #ERB FILE WILL GO HERE
+  end
 
   get '/merchants' do
     @merchants = Merchant.all
@@ -32,6 +35,10 @@ class LittleShopApp < Sinatra::Base
   delete '/merchants/:id' do
     Merchant.destroy(params[:id])
     redirect '/merchants'
+  end
+
+  get '/items-dashboard' do
+  #ERB FILE WILL GO HERE 
   end
 
   get '/items' do

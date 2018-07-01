@@ -7,4 +7,20 @@ class Item < ActiveRecord::Base
 
   has_many :invoice_items
   belongs_to :merchant
+
+  def self.total_item_count
+    count
+  end
+
+  def self.average_unit_price
+    average(:price)
+  end
+
+  def self.newest
+    order(created_at: :asc).last.title
+  end
+
+  def self.oldest
+    order(created_at: :asc).first.title
+  end
 end
