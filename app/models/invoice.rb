@@ -24,7 +24,6 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.invoice_with_highest_unit_price
-    require 'pry'; binding.pry
-    all.invoice_items
+    find(InvoiceItem.find_invoice_item_with_highest_unit_price_invoice_id)
   end
 end
