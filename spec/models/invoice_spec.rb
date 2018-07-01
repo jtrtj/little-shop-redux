@@ -37,6 +37,40 @@ RSpec.describe Invoice do
 
       expect(invoice.total_price).to eq(3000)
     end
+
+    it '#highest_unit_price_invoice_item' do 
+      invoice = Invoice.create(merchant_id: 99999, status: 'shipped')
+ 
+      item_1 = Item.create(
+                          title: 'VapeTron',
+                          description: 'World\'s #1 Vape Pen',
+                          price: 500,
+                          image: '/data/image_file_name',
+                          merchant_id: 6789
+                         )
+                         
+      invoice_item_1 = InvoiceItem.create(
+                                          item_id: item_1.id,
+                                          invoice_id: invoice.id,
+                                          quantity: 5,
+                                          unit_price: item_1.price,
+                                         )
+      item_2 = Item.create(
+                          title: 'VapeWnd',
+                          description: 'World\'s #1 Vape Pen',
+                          price: 1000,
+                          image: '/data/image_file_name',
+                          merchant_id: 6789
+                         )
+                         
+      invoice_item_2 = InvoiceItem.create(
+                                          item_id: item_2.id,
+                                          invoice_id: invoice.id,
+                                          quantity: 5,
+                                          unit_price: item_2.price,
+                                         )
+      expect(invoice_1.highest_unit_price_invoice_item).to eq(invoice_item_2)
+    end
   end
 
   describe 'class methods' do
@@ -97,7 +131,7 @@ RSpec.describe Invoice do
                                           quantity: 5,
                                           unit_price: item_2.price,
                                          )
-        require 'pry'; binding.pry
+
       expect(Invoice.invoice_with_highest_unit_price).to eq(invoice_2)
     end
   end
