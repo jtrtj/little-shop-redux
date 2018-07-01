@@ -26,6 +26,4 @@ class Invoice < ActiveRecord::Base
   def self.invoice_with_lowest_unit_price
     find(InvoiceItem.find_invoice_item_with_lowest_unit_price_invoice_id)
   end
-
-
 end
