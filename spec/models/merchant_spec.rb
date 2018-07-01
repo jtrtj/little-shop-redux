@@ -9,28 +9,53 @@ RSpec.describe Merchant do
 
   describe "Instance Methods" do
     it ".total_merchant_items" do
+      merchant_1 = Merchant.create(name: "Dogs4Life")
+      merchant_2 = Merchant.create(name: "Cats, wow")
+
+      item_1 = Item.create(
+                        title: 'dog bed',
+                        description: 'a bed for dogs',
+                        price: 700,
+                        image: 'image url',
+                        merchant_id: merchant_1.id
+                      )
+      item_2 = Item.create(
+                        title: 'cat bed',
+                        description: 'a bed for cats',
+                        price: 500,
+                        image: 'image url',
+                        merchant_id: merchant_2.id
+                      )
+      item_3= Item.create(
+                        title: 'dog bone',
+                        description: 'a bone for dogs',
+                        price: 20,
+                        image: 'image url',
+                        merchant_id: merchant_1.id
+                      )
+    expect(merchant_1.total_merchant_items).to eq(2)
+    expect(merchant_2.total_merchant_items).to eq(1)
+    end
+
+    xit ".average_item_price" do
 
     end
 
-    it ".average_item_price" do
-
-    end
-
-    it ".total_price_all_items" do
+    xit ".total_price_all_items" do
 
     end
   end
 
   describe "Class Methods" do
-    it ".most_items" do
+    xit ".most_items" do
 
     end
 
-    it ".highest_priced_item" do
+    xit ".highest_priced_item" do
 
     end
 
-    it ".total_price_all_items" do
+    xit ".total_price_all_items" do
 
     end
   end
