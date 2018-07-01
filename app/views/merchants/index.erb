@@ -22,9 +22,10 @@
 <div class="banner">
 <p><a href="/merchants/dashboard">Dashboard</a></p>
 <h1 class="title">Merchants</h1>
-<a href="/merchants/new"><button>Create A New Merchant</button></a>
+<form method="get" action="merchants/new">
+   <button type="submit">Create A New Merchant</button>
+</form>
 </div>
-
 <% @merchants.each do |merchant| %>
   <table>
     <tr><td class="row-name"><a href="/merchants/<%=merchant.id%>"><%=merchant.name%></a></td>

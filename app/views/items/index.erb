@@ -18,10 +18,11 @@
         </ul>
       </nav>
 
-
       <h1>Items</h1>
-        <a href="items/new"><button class="create-button">Create A New Item</button></a>
-      <section>
+        <form method="get" action="items/new">
+          <button type="submit">Create A New Item</button>
+        </form>
+
       <% @items.each do |item| %>
         <ul>
           <li><a href="/items/<%=item.id%>"><%=item.title%></a></li>
