@@ -203,7 +203,7 @@ RSpec.describe Invoice do
                                           unit_price: item_2.price,
                                          )
 
-      expect(Invoice.invoice_with_highest_quantity).to eq(invoice_1)
+      expect(Invoice.invoice_with_lowest_quantity).to eq(invoice_1)
     end
   end
 end
