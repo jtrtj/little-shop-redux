@@ -104,7 +104,7 @@ RSpec.describe Merchant do
                           image: 'image url',
                           merchant_id: merchant_1.id
                           )
-      expect(Merchant.most_items).to eq(merchant_1.name)
+      expect(Merchant.most_items).to eq(merchant_1)
     end
 
     it ".highest_priced_item" do
