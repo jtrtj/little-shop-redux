@@ -7,7 +7,7 @@ class InvoiceItem < ActiveRecord::Base
   belongs_to :invoice
   belongs_to :item
 
-  def self.find_invoice_item_with_highest_unit_price
-    order(unit_price: :desc).first
+  def self.find_invoice_item_with_highest_unit_price_invoice_id
+    order(unit_price: :desc).first.invoice_id
   end
 end
