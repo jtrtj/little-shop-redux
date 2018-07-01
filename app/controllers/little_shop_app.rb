@@ -41,7 +41,11 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items-dashboard' do
-  #ERB FILE WILL GO HERE 
+    @items = Item.all
+    @average_unit_price = Item.average_unit_price
+    @newest = Item.newest
+    @oldest = Item.oldest
+    erb :'items/dashboard'
   end
 
   get '/items' do
