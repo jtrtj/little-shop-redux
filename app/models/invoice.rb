@@ -11,10 +11,6 @@ class Invoice < ActiveRecord::Base
     end.inject(:+)
   end
 
-  def highest_priced_invoice_item
-    invoice_items.order(unit_price: :desc).first
-  end
-
   def self.amount_by_status(status)
     where(status: status).length
   end
@@ -26,4 +22,6 @@ class Invoice < ActiveRecord::Base
   def self.invoice_with_highest_unit_price
     find(InvoiceItem.find_invoice_item_with_highest_unit_price_invoice_id)
   end
+
+
 end
