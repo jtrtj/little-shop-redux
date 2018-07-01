@@ -61,15 +61,14 @@ RSpec.describe Invoice do
       Invoice.create(merchant_id: 99999, status: 'pending')
       Invoice.create(merchant_id: 99999, status: 'returned')
 
-      expect(Invoice.percentage_by_status('shipped')).to eq(66.67)
-      expect(Invoice.percentage_by_status('pending')).to eq(100.00)
-      expect(Invoice.percentage_by_status('returned')).to eq(16.67)
+      expect(Invoice.percentage_by_status('shipped')).to eq(33.0)
+      expect(Invoice.percentage_by_status('pending')).to eq(50.0)
+      expect(Invoice.percentage_by_status('returned')).to eq(17.0)
     end
   end
 end
 
 =begin
-Each Invoice status as a percent of total invoices
 Invoice with the highest associated unit_price
 Invoice with the lowest associated unit_price
 Invoice with the highest associated quantity
