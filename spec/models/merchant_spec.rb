@@ -37,8 +37,24 @@ RSpec.describe Merchant do
     expect(merchant_2.total_merchant_items).to eq(1)
     end
 
-    xit ".average_item_price" do
+    it ".average_item_price" do
+      merchant_1 = Merchant.create(name: "Dogs4Life")
 
+      item_1 = Item.create(
+                        title: 'dog bed',
+                        description: 'a bed for dogs',
+                        price: 3,
+                        image: 'image url',
+                        merchant_id: merchant_1.id
+                      )
+      item_3= Item.create(
+                        title: 'dog bone',
+                        description: 'a bone for dogs',
+                        price: 1,
+                        image: 'image url',
+                        merchant_id: merchant_1.id
+                      )
+      expect(merchant_1.average_item_price).to eq(2)
     end
 
     xit ".total_price_all_items" do
