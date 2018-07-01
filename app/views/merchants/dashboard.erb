@@ -22,9 +22,19 @@
 
       <section class="class-analysis">
           <h5>Merchant With Most Items: <%= @most_items.name %></h5>
-              
-          
-          <h5>Merchant With Highest Price: <%= @highest_priced_item.name %></h5>
+          <h5>Merchant With Highest Price Item: <%= @highest_priced_item.name %></h5>
       </section>
+
+      <section>
+        <% @merchants.each do |merchant| %>
+        <ul>
+          <li><a href="/merchants/#{merchant.id}"><p><%= merchant.name %></p></a>
+          <li><p>Item Count: <%= merchant.total_merchant_items %></p></li>
+          <li><p>Avg Item Price: <%= merchant.average_item_price %></p></li>
+          <li><p>Total Cost of Items: <%= merchant.total_price_all_items %></p></li>
+        </ul>
+        <% end %>
+    </section>
+
     </body>
   </html>
