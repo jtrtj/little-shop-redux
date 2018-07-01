@@ -18,7 +18,7 @@ RSpec.describe 'User' do
       expect(page).to have_content(item.price)
     end
 
-    xit 'can click cancel button to return to item index' do
+    it 'can click cancel button to return to item index' do
       merchant = Merchant.create(name: 'holla atcha vape')
       item = merchant.items.create(
                                   title: 'VapeTron',
@@ -28,6 +28,7 @@ RSpec.describe 'User' do
                                   )
 
       visit "/items/#{item.id}/edit"
+      save_and_open_page
       click_button "Cancel"
 
       expect(current_path).to eq('/items')
