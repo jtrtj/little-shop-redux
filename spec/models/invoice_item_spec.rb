@@ -11,4 +11,22 @@ RSpec.describe InvoiceItem do
       expect(invoice_item).to_not be_valid
     end
   end
+
+  describe 'class methods' do
+    it '#invoice_item_with_highest_unit_price' do
+      invoice_item_1 = InvoiceItem.create(
+                                          item_id: 345,
+                                          invoice_id: 23,
+                                          quantity: 5,
+                                          unit_price: 234567,
+                                        )
+      invoice_item_2 = InvoiceItem.create(
+                                          item_id: 345,
+                                          invoice_id: 23,
+                                          quantity: 5,
+                                          unit_price: 500,
+                                        )
+      expect(InvoiceItem.find_invoice_item_with_highest_unit_price).to eq(invoice_item_1)
+    end
+  end
 end
