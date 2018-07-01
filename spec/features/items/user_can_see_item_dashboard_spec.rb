@@ -1,13 +1,40 @@
 RSpec.describe 'User' do
   context 'visiting /items/dashboard' do
-    xit 'should see item dashboard header' do
-
+    it 'should see item dashboard header' do
+      item_1 = Item.create(
+                        title: 'dog bed',
+                        description: 'a bed for dogs',
+                        price: 700,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
+      item_2 = Item.create(
+                        title: 'cat bed',
+                        description: 'a bed for cats',
+                        price: 500,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
       visit '/items/dashboard'
 
       expect(page).to have_content('Item Dashboard')
     end
 
     xit 'should see item total count' do
+      item_1 = Item.create(
+                        title: 'dog bed',
+                        description: 'a bed for dogs',
+                        price: 700,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
+      item_2 = Item.create(
+                        title: 'cat bed',
+                        description: 'a bed for cats',
+                        price: 500,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
 
       visit '/items/dashboard'
 
@@ -15,6 +42,20 @@ RSpec.describe 'User' do
     end
 
     xit 'should see average price per item' do
+      item_1 = Item.create(
+                        title: 'dog bed',
+                        description: 'a bed for dogs',
+                        price: 700,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
+      item_2 = Item.create(
+                        title: 'cat bed',
+                        description: 'a bed for cats',
+                        price: 500,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
 
       visit '/items/dashboard'
 
@@ -22,6 +63,20 @@ RSpec.describe 'User' do
     end
 
     xit 'should see item by age' do
+      item_1 = Item.create(
+                        title: 'dog bed',
+                        description: 'a bed for dogs',
+                        price: 700,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
+      item_2 = Item.create(
+                        title: 'cat bed',
+                        description: 'a bed for cats',
+                        price: 500,
+                        image: 'image url',
+                        merchant_id: 3456
+                      )
 
       visit '/items/dashboard'
 
