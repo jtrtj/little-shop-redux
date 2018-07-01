@@ -38,7 +38,7 @@ RSpec.describe Invoice do
       expect(invoice.total_price).to eq(3000)
     end
 
-    it '#highest_unit_price_invoice_item' do 
+    it '#highest_unit_price_of_invoice_items' do 
       invoice = Invoice.create(merchant_id: 99999, status: 'shipped')
  
       item_1 = Item.create(
@@ -69,7 +69,7 @@ RSpec.describe Invoice do
                                           quantity: 5,
                                           unit_price: item_2.price,
                                          )
-      expect(invoice_1.highest_unit_price_invoice_item).to eq(invoice_item_2)
+      expect(invoice.highest_unit_price_of_invoice_items).to eq(invoice_item_2.unit_price)
     end
   end
 
