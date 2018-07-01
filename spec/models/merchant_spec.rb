@@ -13,26 +13,26 @@ RSpec.describe Merchant do
       merchant_2 = Merchant.create(name: "Cats, wow")
 
       item_1 = Item.create(
-                        title: 'dog bed',
-                        description: 'a bed for dogs',
-                        price: 700,
-                        image: 'image url',
-                        merchant_id: merchant_1.id
-                      )
+                          title: 'dog bed',
+                          description: 'a bed for dogs',
+                          price: 700,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
       item_2 = Item.create(
-                        title: 'cat bed',
-                        description: 'a bed for cats',
-                        price: 500,
-                        image: 'image url',
-                        merchant_id: merchant_2.id
-                      )
+                          title: 'cat bed',
+                          description: 'a bed for cats',
+                          price: 500,
+                          image: 'image url',
+                          merchant_id: merchant_2.id
+                          )
       item_3= Item.create(
-                        title: 'dog bone',
-                        description: 'a bone for dogs',
-                        price: 20,
-                        image: 'image url',
-                        merchant_id: merchant_1.id
-                      )
+                          title: 'dog bone',
+                          description: 'a bone for dogs',
+                          price: 20,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
     expect(merchant_1.total_merchant_items).to eq(2)
     expect(merchant_2.total_merchant_items).to eq(1)
     end
@@ -41,19 +41,19 @@ RSpec.describe Merchant do
       merchant_1 = Merchant.create(name: "Dogs4Life")
 
       item_1 = Item.create(
-                        title: 'dog bed',
-                        description: 'a bed for dogs',
-                        price: 3,
-                        image: 'image url',
-                        merchant_id: merchant_1.id
-                      )
+                          title: 'dog bed',
+                          description: 'a bed for dogs',
+                          price: 3,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
       item_3= Item.create(
-                        title: 'dog bone',
-                        description: 'a bone for dogs',
-                        price: 1,
-                        image: 'image url',
-                        merchant_id: merchant_1.id
-                      )
+                          title: 'dog bone',
+                          description: 'a bone for dogs',
+                          price: 1,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
       expect(merchant_1.average_item_price).to eq(2)
     end
 
@@ -61,34 +61,78 @@ RSpec.describe Merchant do
       merchant_1 = Merchant.create(name: "Dogs4Life")
 
       item_1 = Item.create(
-                        title: 'dog bed',
-                        description: 'a bed for dogs',
-                        price: 3,
-                        image: 'image url',
-                        merchant_id: merchant_1.id
-                      )
+                          title: 'dog bed',
+                          description: 'a bed for dogs',
+                          price: 700,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
       item_3= Item.create(
-                        title: 'dog bone',
-                        description: 'a bone for dogs',
-                        price: 1,
-                        image: 'image url',
-                        merchant_id: merchant_1.id
-                      )
-      expect(merchant_1.total_price_all_items).to eq(4)
+                          title: 'dog bone',
+                          description: 'a bone for dogs',
+                          price: 20,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
+      expect(merchant_1.total_price_all_items).to eq(720)
     end
   end
 
   describe "Class Methods" do
-    xit ".most_items" do
+    it ".most_items" do
+      merchant_1 = Merchant.create(name: "Dogs4Life")
+      merchant_2 = Merchant.create(name: "Cats, wow")
 
+      item_1 = Item.create(
+                          title: 'dog bed',
+                          description: 'a bed for dogs',
+                          price: 700,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
+      item_2 = Item.create(
+                          title: 'cat bed',
+                          description: 'a bed for cats',
+                          price: 500,
+                          image: 'image url',
+                          merchant_id: merchant_2.id
+                          )
+      item_3= Item.create(
+                          title: 'dog bone',
+                          description: 'a bone for dogs',
+                          price: 20,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
+      expect(Merchant.most_items).to eq(merchant_1.name)
     end
 
-    xit ".highest_priced_item" do
+    it ".highest_priced_item" do
+      merchant_1 = Merchant.create(name: "Dogs4Life")
+      merchant_2 = Merchant.create(name: "Cats, wow")
 
-    end
-
-    xit ".total_price_all_items" do
-
+      item_1 = Item.create(
+                          title: 'dog bed',
+                          description: 'a bed for dogs',
+                          price: 700,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
+      item_2 = Item.create(
+                          title: 'cat bed',
+                          description: 'a bed for cats',
+                          price: 500,
+                          image: 'image url',
+                          merchant_id: merchant_2.id
+                          )
+      item_3= Item.create(
+                          title: 'dog bone',
+                          description: 'a bone for dogs',
+                          price: 20,
+                          image: 'image url',
+                          merchant_id: merchant_1.id
+                          )
+      expect(Merchant.highest_priced_item).to eq(item_1.title)
     end
   end
 end
