@@ -18,4 +18,10 @@ class Invoice < ActiveRecord::Base
   def self.percentage_by_status(status)
     ((amount_by_status(status).to_f / count).round(2)) * 100
   end
+
+  def self.invoice_with_highest_unit_price
+    
+    #dang it
+    
+  end
 end
