@@ -40,7 +40,7 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
-  get '/items-dashboard' do
+  get '/items/dashboard' do
     @items = Item.all
     @average_unit_price = Item.average_unit_price
     @newest = Item.newest
