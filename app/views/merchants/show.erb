@@ -10,7 +10,6 @@
   <script src="main.js"></script>
 </head>
 <body>
-
 <nav id="navbar">
   <ul>
 	<li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
@@ -19,9 +18,6 @@
 	<li><a href="/invoices">Invoices</a></li>
   </ul>
 </nav>
-
-<body>
-
 <div class="input-form">
   <h1 class="title"><%= @merchant.name %></h1>
 <form action="/merchants/<%=@merchant.id%>/edit" method="GET">
@@ -33,6 +29,13 @@
   <input class="delete-button" type="submit" value="Delete">
 </form>
 </div>
+    <% @merchant.items.each do |item| %>
+  <ul>
+    <li><img src='<%= item.image %>'>
+    <li><a href="/items/<%=item.title%>"><%=item.title%></a></li>
+    <li>><%=item.price%></a></li>
+  <ul>
+<% end %>
 </body>
 </html>
 

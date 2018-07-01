@@ -1,4 +1,7 @@
 class LittleShopApp < Sinatra::Base
+  get '/merchants-dashboard' do
+  #ERB FILE WILL GO HERE
+  end
 
   get '/merchants' do
     @merchants = Merchant.all
@@ -34,6 +37,10 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
+  get '/items-dashboard' do
+  #ERB FILE WILL GO HERE 
+  end
+
   get '/items' do
     @items = Item.all
     erb :'items/index'
@@ -66,5 +73,30 @@ class LittleShopApp < Sinatra::Base
   delete '/items/:id' do
     Item.destroy(params[:id])
     redirect '/items'
+  end
+
+  get '/invoices' do
+    @invoices = Invoice.all.includes(:invoice_items)
+    erb :'invoices/index'
+  end
+
+  get '/invoices/:id' do
+    @invoice = Invoice.find(params[:id])
+    erb :'invoices/show'
+  end
+
+  get '/invoices/:id/edit' do
+    @invoice = Invoice.find(params[:id])
+    erb :'invoices/edit'
+  end
+
+  put '/invoices/:id' do
+    Invoice.update(params[:id], params[:invoice])
+    redirect "/invoices/#{params[:id]}"
+  end
+
+  delete '/invoices/:id' do
+    Invoice.destroy(params[:id])
+    redirect '/invoices'
   end
 end

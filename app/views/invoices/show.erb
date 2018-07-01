@@ -1,0 +1,22 @@
+<h1><%= @invoice.merchant_id %></h1>
+<h2><%= @invoice.status %></h2>
+
+<% @invoice.invoice_items.each do |invoice_item| %>
+  <ul>
+    <li>Item ID: <%= invoice_item.item_id %></li>
+    <li>Title: <%= invoice_item.items.title %></li>
+    <li>Quantity: <%= invoice_item.quantity %></li>
+    <li>Price: <%= invoice_item.price %></li>
+  </ul>
+<% end %>
+  
+
+<form action="/invoices/<%= @invoice.id %>/edit" method="GET">
+  <input type="hidden" name="_method" value="EDIT">
+  <input type="submit" value="Edit">
+</form>
+
+<form action="/invoices/<%= @invoice.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
