@@ -8,7 +8,6 @@
       <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
       <script src="main.js"></script>
     </head>
-
     <body>
       <nav id="navbar">
         <ul>
@@ -21,21 +20,20 @@
       <div class="banner">
         <h1 class="title">Item Dashboard</h1>
       </div>
-      
       <section class="class-analysis">
-          <h5>Total Item Count: <%= @total_item_count %></h5>
-          <h5>Avg Price Per Item: <%= @average_unit_price %></h5>
-          <h5>Item By Age:</h5>
-          <h5>Newest</h5>
-            <ul>
-              <li><p>Item:</p></li>
-              <li><a href="/items/<%= @newest.id%>"><%= @newest.title %></a></li>
-            </ul>
-          <h5>Oldest</h5>
-            <ul>
-              <li><p>Item:</p></li>
-              <li><a href="/items/<%= @oldest.id%>"><%= @oldest.title %></a></li>
-            </ul>
+        <h5>Total Item Count: <%= @total_item_count %></h5>
+        <h5>Avg Price Per Item: <%= @average_unit_price %></h5>
+        <h5>Item By Age:</h5>
+        <h5>Newest</h5>
+          <ul>
+            <li><p>Item:</p></li>
+            <li><a href="/items/<%= @newest.id%>"><%= @newest.title %></a></li>
+          </ul>
+        <h5>Oldest</h5>
+          <ul>
+            <li><p>Item:</p></li>
+            <li><a href="/items/<%= @oldest.id%>"><%= @oldest.title %></a></li>
+          </ul>
       </section>
     </body>
   </html>
