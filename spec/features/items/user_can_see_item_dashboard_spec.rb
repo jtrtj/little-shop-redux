@@ -41,7 +41,7 @@ RSpec.describe 'User' do
       expect(page).to have_content("Total Item Count: #{Item.total_item_count}")
     end
 
-    xit 'should see average price per item' do
+    it 'should see average price per item' do
       item_1 = Item.create(
                         title: 'dog bed',
                         description: 'a bed for dogs',
@@ -59,7 +59,7 @@ RSpec.describe 'User' do
 
       visit '/items/dashboard'
 
-      expect(page).to have_content("Average Price Per Item: #{Item.average_price}")
+      expect(page).to have_content("Avg Price Per Item: #{Item.average_unit_price}")
     end
 
     xit 'should see item by age' do
