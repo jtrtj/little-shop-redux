@@ -37,6 +37,15 @@ RSpec.describe Invoice do
 
       expect(invoice.total_price).to eq(3000)
     end
+
+    it '#total_quantity' do
+      invoice = Invoice.create(merchant_id: 99999, status: 'shipped')
+
+      invoice_item_1 = InvoiceItem.create(item_id: 345, invoice_id: invoice.id, quantity: 5, unit_price: 555)
+      invoice_item_2 = InvoiceItem.create(item_id: 465,invoice_id: invoice.id, quantity: 1, unit_price: 453)
+
+      expect(invoice.total_quantity).to eq(6)
+    end
   end
 
   describe 'class methods' do

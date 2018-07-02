@@ -11,6 +11,12 @@ class Invoice < ActiveRecord::Base
     end.inject(:+)
   end
 
+  def total_quantity
+    invoice_items.inject(0) do |total, invoice_item|
+      total += invoice_item.quantity
+    end
+  end
+
   def self.amount_by_status(status)
     where(status: status).length
   end
