@@ -17,10 +17,10 @@ class Item < ActiveRecord::Base
   end
 
   def self.newest
-    order(created_at: :asc).last.title
+    order(created_at: :asc).last
   end
 
   def self.oldest
-    order(created_at: :asc).first.title
+    order(created_at: :asc).first
   end
 end
