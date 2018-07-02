@@ -1,3 +1,12 @@
+<nav id="navbar">
+  <ul>
+  <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+  <li><a href="/merchants">Merchants</a></li>
+  <li><a href="/items">Items</a></li>
+  <li><a href="/invoices">Invoices</a></li>
+  </ul>
+</nav>
+<section>
 <h1><%= @invoice.merchant_id %></h1>
 <h2><%= @invoice.status %></h2>
 
@@ -9,7 +18,7 @@
     <li>Price: <%= invoice_item.price %></li>
   </ul>
 <% end %>
-  
+</section>  
 
 <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
   <input type="hidden" name="_method" value="EDIT">
