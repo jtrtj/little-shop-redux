@@ -14,7 +14,16 @@
 
       <section class="class-analysis">
           <h5>Total Item Count: <%= @total_item_count %></h5>
-            <h5>Avg Price Per Item: <%= @average_unit_price %></h5>
+          <h5>Avg Price Per Item: <%= @average_unit_price %></h5>
+          <h5>Item By Age:</h5>
+          <h5>Newest</h5>
+          <ul>
+            <li> Item: </li>
+            <li><a href="/items/#{item.id}"
+          </ul>
+          <h5>Oldest</h5>
+            <br><%= "Newest: #{@newest}" %>
+            <br> <%= "Oldest: #{@oldest}" %></h5>
       </section>
     </body>
 
