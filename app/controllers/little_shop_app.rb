@@ -55,6 +55,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/new' do
+    @merchants = Merchant.all
     erb :'items/new'
   end
 
@@ -69,6 +70,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/:id/edit' do
+    @merchants = Merchant.all
     @item = Item.find(params[:id])
     erb :'items/edit'
   end

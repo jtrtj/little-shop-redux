@@ -8,28 +8,28 @@ h1 {
 }
 
 #navbar ul {
-  margin: 0; 
-	padding: 5px; 
-	list-style-type: none; 
-	text-align: right; 
-  background-color: #000; 
-  font-size: 18pt;
-} 
-
-#navbar ul li {  
-  display: inline;
-} 
-
-#navbar ul li a { 
-  text-decoration: none; 
-	padding: .2em 1em; 
-	color: #fff; 
+  margin: 0;
+	padding: 5px;
+	list-style-type: none;
+	text-align: right;
   background-color: #000;
-  
-} 
-#navbar ul li a:hover { 
-  color: #000; 
-  background-color: #fff; 
+  font-size: 18pt;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+	padding: .2em 1em;
+	color: #fff;
+  background-color: #000;
+
+}
+#navbar ul li a:hover {
+  color: #000;
+  background-color: #fff;
   }
 
 .banner {
@@ -148,5 +148,51 @@ table, td {
   margin: 4px 2px;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-rows: repeat(auto-fit, minmax);
+}
+
+.grid-item {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 12px;
+  padding-right: 30px;
+}
+
+.grid-item ul li{
+  list-style-type: none;
+  text-align: center;
+}
+
+img {
+  border: 1px solid black;
+  width: 95px;
+  height: 100px;
+  opacity: .5;
+}
+
+a:hover{
+  color: black;
+}
+
+img:hover{
+  opacity: 1;
+}
+
+.button {
+  margin-bottom: 2px;
+
+}
+
+.delete {
+  background-color: red;
+}
+
+.edit {
+  background-color: green;
 }

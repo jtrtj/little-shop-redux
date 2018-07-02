@@ -1,22 +1,43 @@
-<h1><%= @invoice.merchant_id %></h1>
-<h2><%= @invoice.status %></h2>
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LittleShop</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
+      <script src="main.js"></script>
+    </head>
+    <body>
+      <nav id="navbar">
+        <ul>
+        <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+        <li><a href="/merchants">Merchants</a></li>
+        <li><a href="/items">Items</a></li>
+        <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+      <section>
+      <h1><%= @invoice.merchant_id %></h1>
+      <h2><%= @invoice.status %></h2>
 
-<% @invoice.invoice_items.each do |invoice_item| %>
-  <ul>
-    <li>Item ID: <%= invoice_item.item_id %></li>
-    <li>Title: <%= invoice_item.items.title %></li>
-    <li>Quantity: <%= invoice_item.quantity %></li>
-    <li>Price: <%= invoice_item.price %></li>
-  </ul>
-<% end %>
-  
-
-<form action="/invoices/<%= @invoice.id %>/edit" method="GET">
-  <input type="hidden" name="_method" value="EDIT">
-  <input type="submit" value="Edit">
-</form>
-
-<form action="/invoices/<%= @invoice.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete">
-</form>
+      <% @invoice.invoice_items.each do |invoice_item| %>
+        <ul>
+          <li>Item ID: <%= invoice_item.item_id %></li>
+          <li>Title: <%= invoice_item.items.title %></li>
+          <li>Quantity: <%= invoice_item.quantity %></li>
+          <li>Price: <%= invoice_item.price %></li>
+        </ul>
+      <% end %>
+      </section>
+      <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
+        <input type="hidden" name="_method" value="EDIT">
+        <input type="submit" value="Edit">
+      </form>
+      <form action="/invoices/<%= @invoice.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+      </form>
+    </body>
+  </html>
+    
