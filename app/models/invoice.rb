@@ -38,7 +38,9 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.invoice_with_highest_quantity
-    find(InvoiceItem.find_invoice_item_with_highest_quantity_invoice_id)
+    all.max_by do |invoice|
+      invoice.total_quantity
+    end
   end
 
   def self.invoice_with_lowest_quantity
