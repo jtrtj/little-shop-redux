@@ -31,8 +31,10 @@ class Invoice < ActiveRecord::Base
     end
   end
 
-  def self.invoice_with_lowest_unit_price
-    find(InvoiceItem.find_invoice_item_with_lowest_unit_price_invoice_id)
+  def self.invoice_with_lowest_total
+    all.min_by do |invoice|
+      invoice.total_price
+    end
   end
 
   def self.invoice_with_highest_quantity
