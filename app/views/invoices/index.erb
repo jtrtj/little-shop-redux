@@ -1,3 +1,12 @@
+<nav id="navbar">
+  <ul>
+  <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+  <li><a href="/merchants">Merchants</a></li>
+  <li><a href="/items">Items</a></li>
+  <li><a href="/invoices">Invoices</a></li>
+  </ul>
+</nav>
+<section>
 <% @invoices.each do |invoice| %>
   <div id="invoice_<%= invoice.id %>">
     <ul>
@@ -13,3 +22,4 @@
     </form>
   </div>
 <% end %>
+</section>
