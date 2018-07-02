@@ -51,10 +51,12 @@ class LittleShopApp < Sinatra::Base
 
   get '/items' do
     @items = Item.all
+    @merchants = Merchant.all
     erb :'items/index'
   end
 
   get '/items/new' do
+    @merchants = Merchant.all
     erb :'items/new'
   end
 
