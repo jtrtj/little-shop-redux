@@ -5,19 +5,7 @@ class Invoice < ActiveRecord::Base
   has_many :invoice_items
   belongs_to :merchant
 
-  def total_price
-    invoice_items.map do |invoice_item|
-      invoice_item.quantity * invoice_item.unit_price
-    end.inject(:+)
-  end
-
-  def total_quantity
-    invoice_items.inject(0) do |total, invoice_item|
-      total += invoice_item.quantity
-    end
-  end
-
-  def self.amount_by_status(status)
+def self.amount_by_status(status)
     where(status: status).count
   end
 
