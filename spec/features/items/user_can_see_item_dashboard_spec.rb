@@ -62,7 +62,7 @@ RSpec.describe 'User' do
       expect(page).to have_content("Avg Price Per Item: #{Item.average_unit_price}")
     end
 
-    xit 'should see item by age' do
+    it 'should see item by age' do
       item_1 = Item.create(
                         title: 'dog bed',
                         description: 'a bed for dogs',
@@ -79,10 +79,10 @@ RSpec.describe 'User' do
                       )
 
       visit '/items/dashboard'
-
+save_and_open_page
       expect(page).to have_content("Item By Age:")
-      expect(page).to have_content("Newest: #{Item.newest}")
-      expect(page).to have_content("Oldest: #{Item.oldest}")
+      expect(page).to have_content("#{Item.newest.title}")
+      expect(page).to have_content("#{Item.oldest.title}")
     end
   end
 end
