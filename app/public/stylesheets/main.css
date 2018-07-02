@@ -175,3 +175,11 @@ img {
   height: 100px;
   opacity: .5;
 }
+
+a:hover{
+  color: black;
+}
+
+img:hover{
+  opacity: 1;
+}
