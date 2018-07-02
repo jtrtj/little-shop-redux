@@ -29,13 +29,13 @@
         <div class="grid-item">
         <ul>
           <li><img src="item.jpg" alt="image placeholder"/>
-          <li><a href="/items/<%=item.id%>"><%=item.title%></a></li></br>
+          <li><a href="/items/<%=item.id%>"><%=item.title.truncate_words(3)%></a></li></br>
           <li><%=item.price%></li></br>
+
           <form action="/items/<%=item.id%>/edit" method="GET">
             <input type="hidden" name="_method" value="EDIT">
             <input type="submit" value="Edit">
           </form>
-
           <form action="/items/<%= item.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="Delete">
