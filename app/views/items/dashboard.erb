@@ -10,8 +10,18 @@
     </head>
 
     <body>
-      <h1>Items Dashboard</h1>
-
+      <nav id="navbar">
+        <ul>
+          <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+      <div class="banner">
+        <h1 class="title">Item Dashboard</h1>
+      </div>
+      
       <section class="class-analysis">
           <h5>Total Item Count: <%= @total_item_count %></h5>
           <h5>Avg Price Per Item: <%= @average_unit_price %></h5>
