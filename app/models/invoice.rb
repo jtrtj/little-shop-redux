@@ -25,8 +25,10 @@ class Invoice < ActiveRecord::Base
     ((amount_by_status(status).to_f / count).round(2)) * 100
   end
 
-  def self.invoice_with_highest_unit_price
-    find(InvoiceItem.find_invoice_item_with_highest_unit_price_invoice_id)
+  def self.invoice_with_highest_total
+    all.max_by do |invoice|
+      invoice.total_price
+    end
   end
 
   def self.invoice_with_lowest_unit_price
