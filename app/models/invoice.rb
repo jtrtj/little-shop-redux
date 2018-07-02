@@ -42,9 +42,11 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.invoice_with_highest_quantity
-    all.max_by do |invoice|
-      invoice.total_quantity
-    end
+    select('invoices.*, sum(invoice_items.quantity) AS total_quantity')
+    .joins(:invoice_items)
+    .group(:invoice_id, :id)
+    .order('total_quantity DESC')
+    .limit(1).first
   end
 
   def self.invoice_with_lowest_quantity
