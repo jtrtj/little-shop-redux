@@ -79,7 +79,7 @@ RSpec.describe 'User' do
                       )
 
       visit '/items/dashboard'
-save_and_open_page
+
       expect(page).to have_content("Item By Age:")
       expect(page).to have_content("#{Item.newest.title}")
       expect(page).to have_content("#{Item.oldest.title}")
