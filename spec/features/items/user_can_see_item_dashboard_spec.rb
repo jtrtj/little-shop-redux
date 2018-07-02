@@ -15,12 +15,12 @@ RSpec.describe 'User' do
                         image: 'image url',
                         merchant_id: 3456
                       )
-      visit 'items/dashboard'
+      visit '/items/dashboard'
 
       expect(page).to have_content('Items Dashboard')
     end
 
-    xit 'should see item total count' do
+    it 'should see item total count' do
       item_1 = Item.create(
                         title: 'dog bed',
                         description: 'a bed for dogs',
@@ -38,7 +38,7 @@ RSpec.describe 'User' do
 
       visit '/items/dashboard'
 
-      expect(page).to have_content("Item Total Count: #{Item.total_count}")
+      expect(page).to have_content("Total Item Count: #{Item.total_item_count}")
     end
 
     xit 'should see average price per item' do

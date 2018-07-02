@@ -43,6 +43,7 @@ class LittleShopApp < Sinatra::Base
   get '/items/dashboard' do
     @items = Item.all
     @average_unit_price = Item.average_unit_price
+    @total_item_count = Item.total_item_count
     @newest = Item.newest
     @oldest = Item.oldest
     erb :'items/dashboard'
