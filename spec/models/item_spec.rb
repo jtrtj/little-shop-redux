@@ -64,7 +64,7 @@ RSpec.describe Item do
                         image: 'image url',
                         merchant_id: 3456
                       )
-      expect(Item.newest).to eq(item_2.title)
+      expect(Item.newest).to eq(item_2)
     end
 
     it '.oldest' do
@@ -82,7 +82,7 @@ RSpec.describe Item do
                         image: 'image url',
                         merchant_id: 3456
                       )
-      expect(Item.oldest).to eq(item_1.title)
+      expect(Item.oldest).to eq(item_1)
     end
   end
 end

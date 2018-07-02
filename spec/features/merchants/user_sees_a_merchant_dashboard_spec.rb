@@ -62,7 +62,7 @@ RSpec.describe "User" do
       expect(page).to have_content("Merchant With Most Items: #{Merchant.most_items.name}")
       expect(page).to have_content("Merchant With Highest Price Item: #{Merchant.highest_priced_item.name}")
     end
-    
+
     it "should see Merchant With Most Items" do
       merchant_1 = Merchant.create(name: "Dogs4Life")
       merchant_2 = Merchant.create(name: "Cats, wow")
@@ -90,11 +90,11 @@ RSpec.describe "User" do
                           )
 
       visit '/merchants/dashboard'
-save_and_open_page
-      expect(page).to have_content("Item Count: #{merchant_1.total_merchant_items}") 
+
+      expect(page).to have_content("Item Count: #{merchant_1.total_merchant_items}")
       expect(page).to have_content("Avg Item Price: #{merchant_1.average_item_price}")
       expect(page).to have_content("Total Cost of Items: #{merchant_1.total_price_all_items}")
-      expect(page).to have_content("Item Count: #{merchant_2.total_merchant_items}") 
+      expect(page).to have_content("Item Count: #{merchant_2.total_merchant_items}")
       expect(page).to have_content("Avg Item Price: #{merchant_2.average_item_price}")
       expect(page).to have_content("Total Cost of Items: #{merchant_2.total_price_all_items}")
     end
