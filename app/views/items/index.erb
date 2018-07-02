@@ -34,11 +34,11 @@
 
           <form action="/items/<%=item.id%>/edit" method="GET">
             <input type="hidden" name="_method" value="EDIT">
-            <input type="submit" value="Edit">
+            <input class="edit button" type="submit" value="Edit">
           </form>
           <form action="/items/<%= item.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete">
+            <input class="delete button" type="submit" value="Delete">
           </form>
         </ul>
       </div>

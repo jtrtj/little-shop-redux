@@ -183,3 +183,15 @@ a:hover{
 img:hover{
   opacity: 1;
 }
+
+.button {
+  
+}
+
+.delete {
+  background-color: red;
+}
+
+.edit {
+  background-color: green;
+}
