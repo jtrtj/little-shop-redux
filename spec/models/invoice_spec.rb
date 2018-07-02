@@ -37,6 +37,15 @@ RSpec.describe Invoice do
 
       expect(invoice.total_price).to eq(3000)
     end
+
+    it '#total_quantity' do
+      invoice = Invoice.create(merchant_id: 99999, status: 'shipped')
+
+      invoice_item_1 = InvoiceItem.create(item_id: 345, invoice_id: invoice.id, quantity: 5, unit_price: 555)
+      invoice_item_2 = InvoiceItem.create(item_id: 465,invoice_id: invoice.id, quantity: 1, unit_price: 453)
+
+      expect(invoice.total_quantity).to eq(6)
+    end
   end
 
   describe 'class methods' do
@@ -66,7 +75,7 @@ RSpec.describe Invoice do
       expect(Invoice.percentage_by_status('returned')).to eq(17.0)
     end
 
-    it '#invoice_with_highest_unit_price' do
+    it '#invoice_with_highest_total' do
       invoice_1 = Invoice.create(merchant_id: 99999, status: 'shipped')
       invoice_2 = Invoice.create(merchant_id: 77777, status: 'shipped')
       item_1 = Item.create(
@@ -98,10 +107,10 @@ RSpec.describe Invoice do
                                           unit_price: item_2.price,
                                          )
 
-      expect(Invoice.invoice_with_highest_unit_price).to eq(invoice_2)
+      expect(Invoice.invoice_with_highest_total).to eq(invoice_2)
     end
 
-    it '#invoice_with_lowest_unit_price' do
+    it '#invoice_with_lowest_total' do
       invoice_1 = Invoice.create(merchant_id: 99999, status: 'shipped')
       invoice_2 = Invoice.create(merchant_id: 77777, status: 'shipped')
       item_1 = Item.create(
@@ -133,7 +142,7 @@ RSpec.describe Invoice do
                                           unit_price: item_2.price,
                                          )
 
-      expect(Invoice.invoice_with_lowest_unit_price).to eq(invoice_1)
+      expect(Invoice.invoice_with_lowest_total).to eq(invoice_1)
     end
 
     it '#invoice_with_highest_quantity' do
