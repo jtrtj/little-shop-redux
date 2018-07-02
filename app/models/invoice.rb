@@ -18,7 +18,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.amount_by_status(status)
-    where(status: status).length
+    where(status: status).count
   end
 
   def self.percentage_by_status(status)
