@@ -59,7 +59,7 @@ RSpec.describe 'User' do
 
       visit '/items/dashboard'
 
-      expect(page).to have_content("Avg Price Per Item: #{Item.average_unit_price}")
+      expect(page).to have_content("Avg Price Per Item: $ #{Item.average_unit_price}")
     end
 
     it 'should see item by age' do

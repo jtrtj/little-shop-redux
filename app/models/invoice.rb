@@ -14,7 +14,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def self.percentage_by_status(status)
-    ((amount_by_status(status).to_f / count).round(2)) * 100
+    ((amount_by_status(status).to_f / count) * 100).round
   end
 
   def self.invoice_with_highest_total
