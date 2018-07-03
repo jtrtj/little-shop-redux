@@ -18,7 +18,8 @@
         <li><a href="/invoices">Invoices</a></li>
         </ul>
       </nav>
-      <h1>Invoice: <%= @invoice.id %> - <%= @invoice.status %></h1>
+      <h1>Invoice: <%= @invoice.id %></h1>
+      <h1 id="invoice-status"><%= @invoice.status %></h1>
       <section>
       <div class="input-form">
       <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
@@ -49,7 +50,7 @@
         </table>
       </section>
       <section id="invoice-total">
-        <h3> TOTAL: <%= @invoice.total_price %></h3>
+        <h3>INVOICE TOTAL: <div id="total"><%= @invoice.total_price %></div></h3>
       </section>
     </body>
   </html>

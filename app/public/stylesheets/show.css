@@ -37,7 +37,22 @@ h3 {
   outline-style: dashed;
   outline-color: cornflowerblue;
 }
+
 #subtotal {
   background-color: antiquewhite;
   color: darkred;
+}
+
+#invoice-total {
+  margin: auto;
+  width: 50%;
+  text-align: justify;
+  }
+
+#total {
+  color: indianred;
+}
+
+#invoice-status {
+  color: indianred;
 }
