@@ -21,9 +21,9 @@
         <h1 class="title">Invoices Dashboard</h1>
       </div>
       <ul>
-        <li>Pending: <%=@percentage_pending%></li>
-        <li>Shipped: <%=@percentage_shipped%></li>
-        <li>Returned: <%=@percentage_returned%></li>
+        <li>Pending: <%=@percentage_pending.round %>%</li>
+        <li>Shipped: <%=@percentage_shipped.round%>%</li>
+        <li>Returned: <%=@percentage_returned.round%>%</li>
       </ul>
       <ul>
         <li>Highest Invoice Total: <a href="/invoices/<%=@highest_total.id%>"><%=@highest_total.id%></a></li></br>

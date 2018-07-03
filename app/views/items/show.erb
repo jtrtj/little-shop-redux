@@ -39,7 +39,7 @@
           <li><img src='<%= @item.image %>'></li>
           <li><%= @item.title %></li>
           <li><%= @item.description %></li>
-          <li><%= @item.price %></li>
+          <li>$ <%= '%.2f' % @item.price %></li>
         </ul>
       </section>
     </body>

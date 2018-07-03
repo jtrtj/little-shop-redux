@@ -30,7 +30,7 @@
         <ul>
           <li><img src="item.jpg" alt="image placeholder"/>
           <li><a href="/items/<%=item.id%>"><%=item.title.truncate_words(3)%></a></li></br>
-          <li><%=item.price%></li></br>
+          <li>$ <%='%.2f' % item.price%></li></br>
 
           <form action="/items/<%=item.id%>/edit" method="GET">
             <input type="hidden" name="_method" value="EDIT">

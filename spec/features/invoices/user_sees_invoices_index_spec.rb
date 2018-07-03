@@ -30,7 +30,7 @@ RSpec.describe 'user' do
       invoice_2 = Invoice.create(merchant_id: 23, status: 'shipped')
 
       visit "/invoices"
-save_and_open_page
+
         within("#invoice_1") do
           click_button "Delete"
 

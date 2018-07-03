@@ -1,6 +1,6 @@
 RSpec.describe 'User' do
   context 'visiting /items/id/edit' do
-    xit 'should see item edit form' do
+    it 'should see item edit form' do
       merchant = Merchant.create(name: 'holla atcha vape')
       item = merchant.items.create(
                                   title: 'VapeTron',
@@ -13,7 +13,7 @@ RSpec.describe 'User' do
 
       expect(page).to have_content(item.title)
       expect(page).to have_content(item.description)
-      expect(page).to have_content(item.image)
+      expect(page).to have_xpath(item.image)
       expect(page).to have_content(item.merchant.name)
       expect(page).to have_content(item.price)
     end

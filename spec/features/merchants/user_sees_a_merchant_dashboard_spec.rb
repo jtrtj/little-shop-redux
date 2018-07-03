@@ -92,11 +92,11 @@ RSpec.describe "User" do
       visit '/merchants/dashboard'
 
       expect(page).to have_content("Item Count: #{merchant_1.total_merchant_items}")
-      expect(page).to have_content("Avg Item Price: #{merchant_1.average_item_price}")
-      expect(page).to have_content("Total Cost of Items: #{merchant_1.total_price_all_items}")
+      expect(page).to have_content("Avg Item Price: $ #{merchant_1.average_item_price}")
+      expect(page).to have_content("Total Cost of Items: $ #{merchant_1.total_price_all_items}")
       expect(page).to have_content("Item Count: #{merchant_2.total_merchant_items}")
-      expect(page).to have_content("Avg Item Price: #{merchant_2.average_item_price}")
-      expect(page).to have_content("Total Cost of Items: #{merchant_2.total_price_all_items}")
+      expect(page).to have_content("Avg Item Price: $ #{merchant_2.average_item_price}")
+      expect(page).to have_content("Total Cost of Items: $ #{merchant_2.total_price_all_items}")
     end
 
 

@@ -28,10 +28,10 @@
       <section>
         <% @merchants.each do |merchant| %>
         <ul>
-          <li><a href="/merchants/#{merchant.id}"><p><%= merchant.name %></p></a>
+          <li><a href="/merchants/<%=merchant.id%>"><p><%= merchant.name %></p></a>
           <li><p>Item Count: <%= merchant.total_merchant_items %></p></li>
-          <li><p>Avg Item Price: <%= merchant.average_item_price %></p></li>
-          <li><p>Total Cost of Items: <%= merchant.total_price_all_items %></p></li>
+          <li><p>Avg Item Price: $ <%= '%.2f' % merchant.average_item_price %></p></li>
+          <li><p>Total Cost of Items: $ <%= '%.2f' % merchant.total_price_all_items %></p></li>
         </ul>
         <% end %>
     </section>
