@@ -18,6 +18,7 @@
         <li><a href="/invoices">Invoices</a></li>
         </ul>
       </nav>
+      <section>
       <div class="input-form">
         <h1 class="title"><%= @merchant.name %></h1>
       <form action="/merchants/<%=@merchant.id%>/edit" method="GET">
@@ -28,14 +29,17 @@
         <input type="hidden" name="_method" value="DELETE">
         <input class="delete-button" type="submit" value="Delete">
       </form>
+      </br>
       </div>
-      <section>
+      <section class="grid-container">
         <% @merchant.items.each do |item| %>
+          <div class="grid-item">
           <ul>
             <li><img src='<%= item.image %>'></li>
             <li><a href="/items/<%=item.title%>"><%=item.title%></a></li>
             <li><%=item.price%></li>
           </ul>
+          </div>
         <% end %>
       </section>
     </body>
