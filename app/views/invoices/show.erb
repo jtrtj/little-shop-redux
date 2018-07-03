@@ -18,15 +18,14 @@
         </ul>
       </nav>
       <section>
-      <h1><%= @invoice.merchant_id %></h1>
-      <h2><%= @invoice.status %></h2>
-
+      <h1>Invoice: <%= @invoice.id %> - <%= @invoice.status %></h1>
+      <a href="/merchants/<%=@invoice.merchant_id %>"><h2><%=@merchant.first.name%></h2></a>
       <% @invoice.invoice_items.each do |invoice_item| %>
         <ul>
           <li>Item ID: <%= invoice_item.item_id %></li>
-          <li>Title: <%= invoice_item.items.title %></li>
+          <li>Item Title: <%= invoice_item.item.title %></li>
           <li>Quantity: <%= invoice_item.quantity %></li>
-          <li>Price: <%= invoice_item.price %></li>
+          <li>Price: <%= invoice_item.item.price %></li>
         </ul>
       <% end %>
       </section>

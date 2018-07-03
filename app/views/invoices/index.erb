@@ -21,7 +21,7 @@
       <% @invoices.each do |invoice| %>
         <div id="invoice_<%= invoice.id %>">
           <ul>
-            <li><a href="/invoices/<%=invoice.id%>"><%=invoice.merchant_id%></a></li>
+            <li><a href="/invoices/<%=invoice.id%>"><%=invoice.id%></a></li>
           </ul>
           <form action="/invoices/<%=invoice.id%>/edit" method="GET">
             <input type="hidden" name="_method" value="EDIT">

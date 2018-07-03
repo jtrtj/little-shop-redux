@@ -32,10 +32,10 @@
       <section>
         <% @merchant.items.each do |item| %>
           <ul>
-            <li><img src='<%= item.image %>'>
+            <li><img src='<%= item.image %>'></li>
             <li><a href="/items/<%=item.title%>"><%=item.title%></a></li>
-            <li>><%=item.price%></a></li>
-          <ul>
+            <li><%=item.price%></a></li>
+          </ul>
         <% end %>
       <section>
     </body>
