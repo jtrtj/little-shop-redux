@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
       <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/show.css" />
-      <script src="main.js"></script>
+      
     </head>
     <body>
       <nav id="navbar">
@@ -50,7 +50,7 @@
         </table>
       </section>
       <section id="invoice-total">
-        <h3>INVOICE TOTAL: <div id="total"><%= @invoice.total_price %></div></h3>
+        <h3>INVOICE TOTAL: <div id="total">$<%='%.4f' % @invoice.total_price %></div></h3>
       </section>
     </body>
   </html>
