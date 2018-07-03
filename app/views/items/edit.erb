@@ -17,8 +17,6 @@
         <li><a href="/invoices">Invoices</a></li>
         </ul>
       </nav>
-
-
       </div>
       <p>Edit <%= @item.title %>:</p>
       <form class='edit-item' action='/items/<%= @item.id %>' method='POST'>
@@ -30,7 +28,7 @@
         </select></p></br>
         <p><label>Title</label></br>
         <input type='hidden' name='_method' value='PUT'>
-        <textarea name='item[title]'><%= @item.title %>'></textarea></p></br>
+        <textarea name='item[title]'><%= @item.title %></textarea></p></br>
         <p><label>Description</label></br>
         <textarea name='item[description]'><%= @item.description %></textarea></p><br/>
         <p><label>Price</label></br>
@@ -40,7 +38,5 @@
         <input type='submit' value='Update Item'></p></br>
       </form>
       <form action="/items"><input type="submit" value="Cancel"></form>
-
-
     </body>
   </html>
