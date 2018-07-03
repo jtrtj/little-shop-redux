@@ -1,16 +1,29 @@
-<nav id="navbar">
-  <ul>
-  <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
-  <li><a href="/merchants">Merchants</a></li>
-  <li><a href="/items">Items</a></li>
-  <li><a href="/invoices">Invoices</a></li>
-  </ul>
-</nav>
-<form class="new-item", action="/items" method="post">
-  <p>Enter Item Name:</p>
-  <input type="text" name="item[title]" value='Title'>
-  <input type="text" name="item[description]" value='Description'>
-  <input type="text" name="item[price]" value='Price'>
-  <input type="text" name="item[image]" value='Image'>
-  <input type="submit" value="Create Item">
-</form>
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LittleShop</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
+      <script src="main.js"></script>
+    </head>
+    <body>
+      <nav id="navbar">
+        <ul>
+          <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+          <li><a href="/merchants">Merchants</a></li>
+          <li><a href="/items">Items</a></li>
+          <li><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+      <form class="new-item", action="/items" method="post">
+        <p>Enter Item Name:</p>
+        <input type="text" name="item[title]" value='Title'>
+        <input type="text" name="item[description]" value='Description'>
+        <input type="text" name="item[price]" value='Price'>
+        <input type="text" name="item[image]" value='Image'>
+        <input type="submit" value="Create Item">
+      </form>
+    </body>
+  </html>
