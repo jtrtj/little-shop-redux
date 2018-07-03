@@ -37,11 +37,12 @@
           <li>Item Title: <%= invoice_item.item.title %></li>
           <li>Quantity: <%= invoice_item.quantity %></li>
           <li>Price: <%= invoice_item.item.price %></li>
+          <li>Sub Total: <%= invoice_item.quantity * invoice_item.item.price %>
         </ul>
       <% end %>
       </section>
-      <section>
-        
+      <section id="invoice-total">
+        <h5> TOTAL: <%= @invoice.total_price %></h5>
       </section>
     </body>
   </html>
