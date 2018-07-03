@@ -81,7 +81,7 @@ RSpec.describe 'User' do
       expect(page).to have_content("Returned: #{Invoice.percentage_by_status('returned')}")
     end
 
-    it 'should see highest and lowest total invoice prices' do
+    it 'should see highest and lowest total invoice prices and quantity items' do
       invoice_1 = Invoice.create(merchant_id: 99999, status: 'shipped')
       invoice_2 = Invoice.create(merchant_id: 77777, status: 'shipped')
       item_1 = Item.create(
@@ -109,12 +109,14 @@ RSpec.describe 'User' do
       invoice_item_2 = InvoiceItem.create(
                                           item_id: item_2.id,
                                           invoice_id: invoice_2.id,
-                                          quantity: 5,
+                                          quantity: 8,
                                           unit_price: item_2.price,
                                          )
       visit '/invoices/dashboard'
       expect(page).to have_content("Highest Invoice Total: #{invoice_2.id}")
       expect(page).to have_content("Lowest Invoice Total: #{invoice_1.id}")
+      expect(page).to have_content("Highest Item Quantity: #{invoice_2.id}")
+      expect(page).to have_content("Lowest Item Quantity: #{invoice_1.id}")
     end
   end
 end
