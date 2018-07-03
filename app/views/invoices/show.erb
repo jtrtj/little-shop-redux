@@ -19,8 +19,7 @@
       </nav>
       <section>
       <h1>Invoice: <%= @invoice.id %> - <%= @invoice.status %></h1>
-
-
+      <a href="/merchants/<%=@invoice.merchant_id %>"><h2><%=@merchant.first.name%></h2></a>
       <% @invoice.invoice_items.each do |invoice_item| %>
         <ul>
           <li>Item ID: <%= invoice_item.item_id %></li>
