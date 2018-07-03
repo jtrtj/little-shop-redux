@@ -90,8 +90,8 @@ class LittleShopApp < Sinatra::Base
     @percentage_shipped = @invoices.percentage_by_status('shipped')
     @percentage_pending = @invoices.percentage_by_status('pending')
     @percentage_returned = @invoices.percentage_by_status('returned')
-    @lowest_total = @invoices.invoice_with_lowest_total
-    @highest_total = @invoices.invoice_with_highest_total
+    @lowest_total = Invoice.invoice_with_lowest_total
+    @highest_total = Invoice.invoice_with_highest_total
     erb :'invoices/dashboard'
   end
 
