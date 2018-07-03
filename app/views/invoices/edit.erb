@@ -20,8 +20,14 @@
       <form class='edit-invoice' action='/invoices/<%= @invoice.id %>' method='POST'>
         <p>Edit Invoice No. <%= @invoice.id %>:</p>
         <input type='hidden' name='_method' value='PUT'>
-        <input type='integer' name='invoice[merchant_id]' value='<%= @invoice.merchant_id %>'>
-        <input type='text' name='invoice[status]' value='<%= @invoice.status %>'>
+        <input type='integer' name='invoice[merchant_id]' value='<%= @invoice.merchant_id %>' disabled>
+        <p>Current Status: <%= @invoice.status %></p>
+        <p><label>Update Status</label></br>
+        <select class="status-drop-down-list">
+          <option value="pending">Pending</option>
+          <option value="shipped">Shipped</option>
+          <option value="returned">Returned</option>
+        </select></p></br>
         <input type='submit' value='Edit Invoice'>
       </form>
     </body>
