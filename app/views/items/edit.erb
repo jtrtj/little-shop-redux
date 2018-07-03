@@ -20,9 +20,9 @@
       <p>Edit <%= @item.title %>:</p>
       <form class='edit-item' action='/items/<%= @item.id %>' method='POST'>
         <p><label>Merchant</label></br>
-        <select class="merchant-drop-down-list">
+        <select class="merchant-drop-down-list" name='item[merchant_id]'>
           <%@merchants.each do |merchant|%>
-          <option value="<%=merchant.name%>"><%=merchant.name%></option>
+          <option value="<%=merchant.id%>"><%=merchant.name%></option>
           <%end%>
         </select></p></br>
         <p><label>Title</label></br>
