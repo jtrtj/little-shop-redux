@@ -87,6 +87,9 @@ class LittleShopApp < Sinatra::Base
 
   get '/invoices/dashboard' do
     @invoices = Invoice.all.includes(:invoice_items)
+    @percentage_shipped = @invoices.percentage_by_status('shipped')
+    @percentage_pending = @invoices.percentage_by_status('pending')
+    @percentage_returned = @invoices.percentage_by_status('returned')
     erb :'invoices/dashboard'
   end
 
