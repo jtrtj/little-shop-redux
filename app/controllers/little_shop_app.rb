@@ -85,6 +85,11 @@ class LittleShopApp < Sinatra::Base
     redirect '/items'
   end
 
+  get '/invoices/dashboard' do
+    @invoices = Invoice.all.includes(:invoice_items)
+    erb :'invoices/dashboard'
+  end
+
   get '/invoices' do
     @invoices = Invoice.all.includes(:invoice_items)
     erb :'invoices/index'
