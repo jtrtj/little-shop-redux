@@ -17,6 +17,10 @@
         <li><a href="/invoices">Invoices</a></li>
         </ul>
       </nav>
+      <div class="banner">
+        <p><a href="/invoices/dashboard">Dashboard</a></p>
+        <h1 class="title">Invoices</h1>
+      </div>
       <section>
       <% @invoices.each do |invoice| %>
         <div id="invoice_<%= invoice.id %>">
