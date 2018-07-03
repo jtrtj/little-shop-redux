@@ -6,33 +6,41 @@
       <title>LittleShop</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/main.css" />
+      <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/show.css" />
       <script src="main.js"></script>
     </head>
-    <body>
-      <nav id="navbar">
-        <ul>
-        <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
-        <li><a href="/merchants">Merchants</a></li>
-        <li><a href="/items">Items</a></li>
-        <li><a href="/invoices">Invoices</a></li>
-        </ul>
-      </nav>
-      <p><%= @item.title %></p>
-      <p><%= @item.description %></p>
-      <p><%= @item.price %></p>
-      <p><%= @item.image %></p>
-      <p><%= @item.merchant.name %></p>
+  <body>
 
-      <img src="item.jpg" alt="image placeholder"/>
+    <nav id="navbar">
+      <ul>
+      <li style="float:left"><a class="logo" href="/merchants">LittleShop</a></li>
+      <li><a href="/merchants">Merchants</a></li>
+      <li><a href="/items">Items</a></li>
+      <li><a href="/invoices">Invoices</a></li>
+      </ul>
+    </nav>
+
+    <div class="input-form">
+      <h1 class="title"><%= @item.title %></h1>
 
       <form action="/items/<%= @item.id %>/edit" method="GET">
         <input type="hidden" name="_method" value="EDIT">
-        <input type="submit" value="Edit">
+        <input style="background-color:cornflowerblue" type="submit" value="Edit">
       </form>
 
       <form action="/items/<%= @item.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete">
+        <input class="delete-button" type="submit" value="Delete">
       </form>
+      </div>
+      <section>
+        <ul>
+          <li><a href="/merchants/<%=@item.merchant.name%>"><%= @item.merchant.name %></a></li>
+          <li><img src='<%= @item.image %>'></li>
+          <li><%= @item.title %></li>
+          <li><%= @item.description %></li>
+          <li><%= @item.price %></li>
+        </ul>
+      </section>
     </body>
   </html>
