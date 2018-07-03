@@ -18,8 +18,8 @@
         <li><a href="/invoices">Invoices</a></li>
         </ul>
       </nav>
-      <section>
       <h1>Invoice: <%= @invoice.id %> - <%= @invoice.status %></h1>
+      <section>
       <div class="input-form">
       <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
         <input type="hidden" name="_method" value="EDIT">
@@ -31,19 +31,25 @@
       </form>
       </div>
       <a href="/merchants/<%=@invoice.merchant_id %>"><h2><%=@merchant.first.name%></h2></a>
-      <% @invoice.invoice_items.each do |invoice_item| %>
-        <ul>
-          <li>Item ID: <%= invoice_item.item_id %></li>
-          <li>Item Title: <%= invoice_item.item.title %></li>
-          <li>Quantity: <%= invoice_item.quantity %></li>
-          <li>Price: <%= invoice_item.item.price %></li>
-          <li>Sub Total: <%= invoice_item.quantity * invoice_item.item.price %>
-        </ul>
-      <% end %>
+        <table>
+            <th>Item ID</th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+          <% @invoice.invoice_items.each do |invoice_item| %>
+          <tr>
+            <td><%= invoice_item.item_id %></td>
+            <td><%= invoice_item.item.title %></td>
+            <td><%= invoice_item.quantity %></td>
+            <td><%= invoice_item.item.price %></td>
+            <td id="subtotal"><%= invoice_item.quantity * invoice_item.item.price %></td>
+          </tr>
+          <% end %>
+        </table>
       </section>
       <section id="invoice-total">
-        <h5> TOTAL: <%= @invoice.total_price %></h5>
+        <h3> TOTAL: <%= @invoice.total_price %></h3>
       </section>
     </body>
   </html>
-    
