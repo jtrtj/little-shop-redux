@@ -13,7 +13,7 @@ RSpec.describe 'User' do
 
       expect(page).to have_content(item.title)
       expect(page).to have_content(item.description)
-      expect(page).to have_content(item.image)
+      expect(page).to have_xpath("//img[contains(@src, item.image)]")      # expect(page).to have_content(item.image)
       expect(page).to have_content(item.merchant.name)
       expect(page).to have_content(item.price)
     end

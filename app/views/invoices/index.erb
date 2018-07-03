@@ -18,25 +18,29 @@
         </ul>
       </nav>
       <div class="banner">
-        <p><a href="/invoices/dashboard">Dashboard</a></p>
+        <p><a href="/items/dashboard">Dashboard</a></p>
         <h1 class="title">Invoices</h1>
+        <form method="get" action="items/new">
+          <button type="submit">Create A New Item</button>
+        </form>
       </div>
       <section>
-      <% @invoices.each do |invoice| %>
+        <% @invoices.each do |invoice| %>
         <div id="invoice_<%= invoice.id %>">
-          <ul>
-            <li><a href="/invoices/<%=invoice.id%>"><%=invoice.id%></a></li>
-          </ul>
-          <form action="/invoices/<%=invoice.id%>/edit" method="GET">
-            <input type="hidden" name="_method" value="EDIT">
-            <input type="submit" value="Edit">
-          </form>
-          <form action="/invoices/<%= invoice.id %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete">
-          </form>
+          <table>
+            <tr><td class="row-name"><a href="/invoices/<%=invoice.id%>"><%=invoice.id%></a></td>
+              <td class="row-edit"><form action="/invoices/<%=invoice.id%>/edit" method="GET">
+                <input type="hidden" name="_method" value="EDIT">
+                <input type="submit" value="Edit">
+              </form></td>
+                <td class="row-delete"><form action="/invoices/<%= invoice.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete">
+              </form></td>
+            </tr>
+          </table>
         </div>
-      <% end %>
+        <% end %>
       </section>
     </body>
   </html>
