@@ -4,8 +4,11 @@ class Invoice < ActiveRecord::Base
                 
   has_many :invoice_items
   belongs_to :merchant
+  
+  def total_price
+  end
 
-def self.amount_by_status(status)
+  def self.amount_by_status(status)
     where(status: status).count
   end
 
