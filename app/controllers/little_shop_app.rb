@@ -85,6 +85,16 @@ class LittleShopApp < Sinatra::Base
     redirect '/items'
   end
 
+  get '/invoices/dashboard' do
+    @invoices = Invoice.all.includes(:invoice_items)
+    @percentage_shipped = @invoices.percentage_by_status('shipped')
+    @percentage_pending = @invoices.percentage_by_status('pending')
+    @percentage_returned = @invoices.percentage_by_status('returned')
+    @lowest_total = @invoices.invoice_with_lowest_total
+    @highest_total = @invoices.invoice_with_highest_total
+    erb :'invoices/dashboard'
+  end
+
   get '/invoices' do
     @invoices = Invoice.all.includes(:invoice_items)
     erb :'invoices/index'
