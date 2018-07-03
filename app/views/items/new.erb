@@ -19,7 +19,8 @@
         <li><a href="/invoices">Invoices</a></li>
       </ul>
     </nav>
-    <p>Create New Item:</p>
+    <h1>Create New Item</h1>
+    <div class="input-form">
       <form class='edit-item' action='/items' method='POST'>
         <p><label>Merchant</label></br>
         <select class="merchant-drop-down-list" name='item[merchant_id]'>
@@ -29,15 +30,16 @@
         </select></p></br>
         <p><label>Title</label></br>
         <input type='hidden' name='_method' value='POST'>
-        <textarea name='item[title]'></textarea></p></br>
+        <textarea name='item[title]' placeholder="Enter Title Here..."></textarea></p></br>
         <p><label>Description</label></br>
-        <textarea name='item[description]'></textarea></p><br/>
+        <textarea name='item[description]' placeholder="Enter Description Here..."></textarea></p><br/>
         <p><label>Price</label></br>
-        <input type='text' name='item[price]'></p></br>
+        <input type='text' name='item[price]' placeholder="ex. $5.00 => 500"></p></br>
         <p><label>Image URL</label></br>
-        <input type='text' name='item[image]'</br></br></br>
-        <input type='submit' value='Create'></p></br>
+        <input type='text' name='item[image]' placeholder="URL"</br></br></br>
+        <input style="background-color:cornflowerblue" type='submit' value='Create'></p></br>
       </form>
       <form action="/items"><input type="submit" value="Cancel"></form>
+      </div>
   </body>
 </html>
