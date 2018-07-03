@@ -15,9 +15,9 @@ RSpec.describe 'User' do
 
       visit '/invoices/dashboard'
 
-      expect(page).to have_content("Shipped: #{@invoice.percentage_by_status(shipped)}")
-      expect(page).to have_content("Pending: #{@invoice.percentage_by_status(pending)}")
-      expect(page).to have_content("Returned: #{@invoice.percentage_by_status(returned)}")
+      expect(page).to have_content("Shipped: #{Invoice.percentage_by_status('shipped')}")
+      expect(page).to have_content("Pending: #{Invoice.percentage_by_status('pending')}")
+      expect(page).to have_content("Returned: #{Invoice.percentage_by_status('returned')}")
     end
   end
 end
