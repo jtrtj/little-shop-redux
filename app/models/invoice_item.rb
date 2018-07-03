@@ -7,6 +7,10 @@ class InvoiceItem < ActiveRecord::Base
   belongs_to :invoice
   belongs_to :item
 
+  def item_title
+    item.title
+  end
+
   def self.find_invoice_item_with_highest_unit_price_invoice_id
     list_by_unit_price_desc[0].invoice_id
   end

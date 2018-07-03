@@ -9,7 +9,16 @@ RSpec.describe Invoice do
       expect(invoice).to_not be_valid
     end
   end
-  
+  describe 'instance_methods' do
+    it '#total_price' do
+      invoice = Invoice.create(merchant_id: 1, status: 'sdfg')
+      invoice.invoice_items.create(item_id: 2, invoice_id: invoice.id, quantity: 4, unit_price: 10)
+      invoice.invoice_items.create(item_id: 2, invoice_id: invoice.id, quantity: 1, unit_price: 10)
+      
+      expect(invoice.total_price).to eq(50)
+    end
+  end
+
   describe 'class methods' do
     it '#amount_by_status(status)' do
       Invoice.create(merchant_id: 99999, status: 'shipped')

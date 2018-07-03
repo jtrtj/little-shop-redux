@@ -11,6 +11,14 @@ RSpec.describe InvoiceItem do
       expect(invoice_item).to_not be_valid
     end
   end
+  describe 'instance methods' do
+    it '#item_title' do
+      item = Item.create(title: 'VapeTron', description: 'World\'s #1 Vape Pen', price: 500, image: '/data/image_file_name', merchant_id: 678)
+      invoice_item = InvoiceItem.create(item_id: item.id, invoice_id: 23, quantity: 5, unit_price: item.price)
+
+      expect(invoice_item.item_title).to eq(item.title)
+    end
+  end
 
   describe 'class methods' do
     it '#find_invoice_item_with_highest_unit_price_invoice_id' do
