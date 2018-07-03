@@ -20,6 +20,16 @@
       </nav>
       <section>
       <h1>Invoice: <%= @invoice.id %> - <%= @invoice.status %></h1>
+      <div class="input-form">
+      <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
+        <input type="hidden" name="_method" value="EDIT">
+        <input style="background-color:cornflowerblue" type="submit" value="Edit">
+      </form>
+      <form action="/invoices/<%= @invoice.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+      </form>
+      </div>
       <a href="/merchants/<%=@invoice.merchant_id %>"><h2><%=@merchant.first.name%></h2></a>
       <% @invoice.invoice_items.each do |invoice_item| %>
         <ul>
@@ -33,14 +43,6 @@
       <section>
         
       </section>
-      <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
-        <input type="hidden" name="_method" value="EDIT">
-        <input type="submit" value="Edit">
-      </form>
-      <form action="/invoices/<%= @invoice.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete">
-      </form>
     </body>
   </html>
     
