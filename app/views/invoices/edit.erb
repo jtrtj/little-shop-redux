@@ -20,7 +20,7 @@
       <form class='edit-invoice' action='/invoices/<%= @invoice.id %>' method='POST'>
         <p>Edit Invoice No. <%= @invoice.id %>:</p>
         <input type='hidden' name='_method' value='PUT'>
-        <input type='integer' name='invoice[merchant_id]' value='<%= @invoice.merchant_id %>'>
+        <input type='integer' name='invoice[merchant_id]' value='<%= @invoice.merchant_id %>' disabled>
         <input type='text' name='invoice[status]' value='<%= @invoice.status %>'>
         <input type='submit' value='Edit Invoice'>
       </form>
