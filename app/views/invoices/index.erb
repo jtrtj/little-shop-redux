@@ -19,13 +19,14 @@
       </nav>
       <div class="banner">
         <p><a href="/items/dashboard">Dashboard</a></p>
-        <h1 class="title">Items</h1>
+        <h1 class="title">Invoices</h1>
         <form method="get" action="items/new">
           <button type="submit">Create A New Item</button>
         </form>
       </div>
       <section>
         <% @invoices.each do |invoice| %>
+        <div id="invoice_<%= invoice.id %>">
           <table>
             <tr><td class="row-name"><a href="/invoices/<%=invoice.id%>"><%=invoice.id%></a></td>
               <td class="row-edit"><form action="/invoices/<%=invoice.id%>/edit" method="GET">
@@ -39,6 +40,7 @@
             </tr>
           </table>
         <% end %>
+        </div>
       </section>
     </body>
   </html>
